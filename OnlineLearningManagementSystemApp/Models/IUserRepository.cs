@@ -15,10 +15,10 @@ namespace OnlineLearningManagementSystemApp.Models
         void Delete(long userId);
        // void Update(User user);
         List<User> GetAll();
-        void UpdateByUsername(string newUsername, User user);
-        void UpdateByRole(string newRole, User user);
-        void UpdateByEmail(string newEmail, User user);
-        void UpdateByPassword(string newPassword, User user);
-        void UpdateByPhoto(string newPhoto, User user);
+        void UpdateByUsername(string newUsername, long userId);
+        void UpdateByRole(string newRole, long userId);
+        void UpdateByEmail(string newEmail,long userId);
+        void UpdateByPassword(string newPassword, long userId);
+        void UpdateByPhoto(string newPhoto, long userId);
     }
 }

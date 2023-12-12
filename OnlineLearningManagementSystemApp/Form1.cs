@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -37,15 +38,13 @@ namespace OnlineLearningManagementSystemApp
             user.Role = "Student";
 
 
-            // userRepository.GetByEmail(user.Email);
 
 
-
-            // Set other properties as needed
 
             try
             {
-                userRepository.Add(user);
+                //  userRepository.Add(user);
+                userRepository.UpdateByEmail("kamil@admin",6);
             }
             catch (InvalidOperationException ex)
             {
@@ -54,7 +53,7 @@ namespace OnlineLearningManagementSystemApp
 
             
 
-            MessageBox.Show("Data added successfully.");
+           // MessageBox.Show("Data added successfully.");
         }
 
 
