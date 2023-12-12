@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineLearningManagementSystemApp.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,12 +15,14 @@ namespace OnlineLearningManagementSystemApp
 {
     public partial class Form1 : Form
     {
-        private readonly dbEntities dbEntities ; 
+        private UserRepository userRepository ;
+        private String userName;
+        private String password;
 
         public Form1()
         {
             InitializeComponent();
-            dbEntities = new dbEntities(); 
+            userRepository = new UserRepository();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -28,19 +31,40 @@ namespace OnlineLearningManagementSystemApp
 
             // Assign values from UI controls to the entity properties
 
-            user.Username = "Kamil";
-            user.Email = "Kamil@admin";
+            user.Username = "Samir";
+            user.Email = "samir@admin";
             user.Password = "kamilAdmin";
-            user.Role = "Admin";
+            user.Role = "Student";
+
+
+            // userRepository.GetByEmail(user.Email);
+
 
 
             // Set other properties as needed
 
-            dbEntities.Users.Add(user); // Add the new entity to the context
+            try
+            {
+                userRepository.Add(user);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
-            dbEntities.SaveChanges(); // Save changes to commit to the database
+            
 
             MessageBox.Show("Data added successfully.");
+        }
+
+
+        private void LoginBtn_Click(object sender, EventArgs e)
+        {
+            userName = textBox1.Text;
+            password = textBox2.Text;
+
+          //  login(userName, password); // inside try-catch make login user
+
         }
     }
 }
