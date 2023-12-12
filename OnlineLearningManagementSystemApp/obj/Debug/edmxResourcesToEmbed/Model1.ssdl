@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Assessment">
+    <Key>
+      <PropertyRef Name="AssessmentID" />
+    </Key>
+    <Property Name="AssessmentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseID" Type="bigint" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DueDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Assessment_User">
+    <Key>
+      <PropertyRef Name="AssessmentUserID" />
+    </Key>
+    <Property Name="AssessmentUserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="bigint" Nullable="false" />
+    <Property Name="AssessmentID" Type="bigint" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="text" Nullable="false" />
+    <Property Name="InstructorID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Enrollment">
+    <Key>
+      <PropertyRef Name="EnrollmentID" />
+    </Key>
+    <Property Name="EnrollmentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StudentID" Type="bigint" Nullable="false" />
+    <Property Name="CourseID" Type="bigint" Nullable="false" />
+    <Property Name="EnrollmentDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Photo" Type="varbinary" MaxLength="1" />
+  </EntityType>
+  <Association Name="FK_Assessment_CourseID">
+    <End Role="Course" Type="Self.Course" Multiplicity="0..1" />
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessment_User_AssessmentID">
+    <End Role="Assessment" Type="Self.Assessment" Multiplicity="1" />
+    <End Role="Assessment_User" Type="Self.Assessment_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Assessment">
+        <PropertyRef Name="AssessmentID" />
+      </Principal>
+      <Dependent Role="Assessment_User">
+        <PropertyRef Name="AssessmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Assessment_User_UserID">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Assessment_User" Type="Self.Assessment_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Assessment_User">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Course_InstructorID">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="InstructorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollment_CourseID">
+    <End Role="Course" Type="Self.Course" Multiplicity="1" />
+    <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="Enrollment">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Enrollment_StudentID">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Enrollment">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbModelStoreContainer">
+    <EntitySet Name="Assessment" EntityType="Self.Assessment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Assessment_User" EntityType="Self.Assessment_User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Enrollment" EntityType="Self.Enrollment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Assessment_CourseID" Association="Self.FK_Assessment_CourseID">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Assessment" EntitySet="Assessment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessment_User_AssessmentID" Association="Self.FK_Assessment_User_AssessmentID">
+      <End Role="Assessment" EntitySet="Assessment" />
+      <End Role="Assessment_User" EntitySet="Assessment_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Assessment_User_UserID" Association="Self.FK_Assessment_User_UserID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Assessment_User" EntitySet="Assessment_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Course_InstructorID" Association="Self.FK_Course_InstructorID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Course" EntitySet="Course" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollment_CourseID" Association="Self.FK_Enrollment_CourseID">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="Enrollment" EntitySet="Enrollment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Enrollment_StudentID" Association="Self.FK_Enrollment_StudentID">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Enrollment" EntitySet="Enrollment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

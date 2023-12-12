@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="217aff86b5b04abfbed2fda0df838f6a" Name="Diagram1" ZoomLevel="80">
+        <EntityTypeShape EntityType="dbModel.Assessment" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Assessment_User" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Course" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.Enrollment" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbModel.User" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="dbModel.FK_Assessment_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Assessment_User_AssessmentID" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Assessment_User_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Course_InstructorID" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Enrollment_CourseID" ManuallyRouted="false" />
+        <AssociationConnector Association="dbModel.FK_Enrollment_StudentID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
