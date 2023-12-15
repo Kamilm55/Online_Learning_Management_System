@@ -16,7 +16,9 @@ namespace OnlineLearningManagementSystemApp
 {
     public partial class Form1 : Form
     {
-        private UserRepository userRepository ;
+        private IUserRepository userRepository ;
+        private ICourseRepository courseRepository;
+        private IEnrollmentRepository enrollmentRepository;
         private String userName;
         private String password;
 
@@ -24,36 +26,74 @@ namespace OnlineLearningManagementSystemApp
         {
             InitializeComponent();
             userRepository = new UserRepository();
+            courseRepository = new CourseRepository();
+            enrollmentRepository = new EnrollmentRepository();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            User user = new User(); // Create a new instance of your entity class
 
-            // Assign values from UI controls to the entity properties
+            User userAdmin = userRepository.GetByUserName("Kamil");
+            User userStudent = userRepository.GetByEmail("kamil@Student");
+            Course course = courseRepository.GetById(1);
+            //Test Code
 
-            user.Username = "Samir";
-            user.Email = "samir@admin";
-            user.Password = "kamilAdmin";
-            user.Role = "Student";
-
-
-
-
+            foreach (var item in enrollmentRepository.GetByCourseId(course.CourseID))
+            {
+                Debug.WriteLine(item.StudentID);
+            }
+           
+            //enroll course
+           /* Enrollment  enrollment = new Enrollment();
+            enrollment.StudentID = userStudent.UserID;
+            enrollment.CourseID = course.CourseID;
+            enrollment.EnrollmentDate = DateTime.Now;
 
             try
             {
-                //  userRepository.Add(user);
-                userRepository.UpdateByEmail("kamil@admin",6);
+                enrollmentRepository.Add(enrollment);
+
             }
             catch (InvalidOperationException ex)
             {
                 MessageBox.Show(ex.Message);
+            }*/
+
+            /*Course course = new Course();
+            course.Title = "data structures";
+            course.Description = "Desc";
+            course.InstructorID = userAdmin.UserID;
+
+            try
+            {
+                 courseRepository.Add(course);
+                
             }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+            /*
+                        User user = new User(); 
 
-            
+                        user.Username = "Samir";
+                        user.Email = "samir@admin";
+                        user.Password = "kamilAdmin";
+                        user.Role = "Student";
 
-           // MessageBox.Show("Data added successfully.");
+                        try
+                        {
+                            //  userRepository.Add(user);
+                            userRepository.UpdateByEmail("kamil@admin",6);
+                        }
+                        catch (InvalidOperationException ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+            */
+
+
+            // MessageBox.Show("Data added successfully.");
         }
 
 

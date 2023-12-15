@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace OnlineLearningManagementSystemApp.Models
 {
@@ -138,12 +133,11 @@ namespace OnlineLearningManagementSystemApp.Models
             User user = GetById(updatedUser.UserID);
             if (user != null)
             {
-                // Update other properties as needed
                 user.Username = updatedUser.Username;
                 user.Email = updatedUser.Email;
                 user.Password = updatedUser.Password;
                 user.Role = updatedUser.Role;
-                // Update other properties...
+            // user photo
 
                 dbEntities.SaveChanges();
             }
