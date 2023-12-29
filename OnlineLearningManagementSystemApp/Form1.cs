@@ -99,10 +99,20 @@ namespace OnlineLearningManagementSystemApp
 
         private void LoginBtn_Click(object sender, EventArgs e)
         {
-            userName = textBox1.Text;
-            password = textBox2.Text;
+          /*  userName = textBox1.Text;
+            password = textBox2.Text;*/
 
           //  login(userName, password); // inside try-catch make login user
+
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox2_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
