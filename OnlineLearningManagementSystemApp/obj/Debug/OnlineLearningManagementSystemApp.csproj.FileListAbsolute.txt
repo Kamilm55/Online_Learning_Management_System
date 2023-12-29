@@ -13,3 +13,4 @@ C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagemen
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.csproj.CopyComplete
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.exe
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.pdb
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\bin\Debug\Guna.UI2.dll
