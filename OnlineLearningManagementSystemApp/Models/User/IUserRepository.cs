@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Models
 {
-    internal interface IUserRepository
+    public interface IUserRepository
     { 
         User GetById(long id);
         User GetByUserName(string userName);

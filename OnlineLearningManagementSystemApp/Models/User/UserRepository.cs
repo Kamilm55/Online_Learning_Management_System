@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace OnlineLearningManagementSystemApp.Models
 {
-    internal class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly dbEntities dbEntities ;
         public UserRepository() 

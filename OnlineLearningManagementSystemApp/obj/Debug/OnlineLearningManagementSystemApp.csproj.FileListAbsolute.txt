@@ -6,7 +6,6 @@ C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagemen
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\bin\Debug\EntityFramework.xml
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.csproj.AssemblyReference.cache
-C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.Form1.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.Properties.Resources.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.csproj.GenerateResource.cache
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.csproj.CoreCompileInputs.cache
@@ -14,3 +13,6 @@ C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagemen
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.exe
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.pdb
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\bin\Debug\Guna.UI2.dll
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.RegisterForm.resources
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.Login.resources
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.MainPage.resources
