@@ -25,7 +25,7 @@ namespace OnlineLearningManagementSystemApp.Models
             return dbEntities.Users.FirstOrDefault(user => user.Email.Equals(email));
         }
 
-        public void Add(User user) 
+        public bool Add(User user) 
         {
             if (GetByEmail(user.Email) != null)
             {
@@ -38,6 +38,7 @@ namespace OnlineLearningManagementSystemApp.Models
             dbEntities.Users.Add(user); // Add the new entity to the context
 
             dbEntities.SaveChanges(); // Save changes to commit to the database
+            return true;
         }
 
         public void Delete(long userId)

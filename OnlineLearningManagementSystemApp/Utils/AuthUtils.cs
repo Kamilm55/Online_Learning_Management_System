@@ -5,24 +5,60 @@ namespace OnlineLearningManagementSystemApp.Utils
 {
     public class AuthUtils
     {
-        public bool ValidateEmailAndPassword(ILoginView view, string email, string password)
+        public bool ValidateCredentials(ILoginView view, string email, string password)
         {
             // Validate credentials
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
-            {
-                // Show warning message if either email or password is null or empty
-                view.ShowWarning("Please enter both email and password.");
-                return false; // Exit the method, as there's no need to proceed with further validation
-            }
+            bool isValidEmail = ValidateEmail(view, email);
+            if (!isValidEmail) return false;
+            bool isValidPassword = ValidatePassword(view, password);
 
-            // Check if email and password meet minimum length requirements
-            if (email.Length < 6 || password.Length < 6)
+            return isValidEmail && isValidPassword;
+        }
+
+        public bool ValidateCredentials(IRegisterView view, string username,  string email , string password)
+        {
+            // Validate registration data
+            bool isValidEmail = ValidateEmail(view, email);
+            if (!isValidEmail) return false;
+            bool isValidPassword = ValidatePassword(view, password);
+            if (!isValidPassword) return false;
+            bool isValidUsername = ValidateUsername(view, username);
+
+            return isValidUsername && isValidPassword && isValidEmail;
+        }
+
+        private bool ValidateUsername(IRegisterView view, string username)
+        {
+            // Validate username
+            if (string.IsNullOrWhiteSpace(username))
             {
-                // Show warning message if either email or password is too short
-                view.ShowWarning("Email and password must be at least 6 characters long.");
+                // Show warning message if username is null or empty
+                view.ShowWarning("Please enter a username.");
                 return false; // Exit the method
             }
 
+            // Additional username validation logic can be added here
+
+            return true;
+        }
+
+        private bool ValidatePassword(IAuthView view, string password)
+        {
+            // Validate password
+            if (string.IsNullOrWhiteSpace(password) || password.Length < 6)
+            {
+                // Show warning message if password is null, empty, or too short
+                view.ShowWarning("Password must be at least 6 characters long.");
+                return false; // Exit the method
+            }
+
+            // Additional password validation logic can be added here
+
+            return true;
+        }
+
+        private bool ValidateEmail(IAuthView view, string email)
+        {
             // Use a regular expression to validate the email format
             if (!IsValidEmail(email))
             {

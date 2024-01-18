@@ -34,5 +34,10 @@ namespace OnlineLearningManagementSystemApp
         {
             Debug.WriteLine(maintest.Text);
         }
+
+        private void guna2HtmlLabel3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

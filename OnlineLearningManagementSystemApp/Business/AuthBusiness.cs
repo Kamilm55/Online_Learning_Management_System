@@ -9,6 +9,7 @@ using System.Security.Authentication;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace OnlineLearningManagementSystemApp.Business
@@ -58,6 +59,22 @@ namespace OnlineLearningManagementSystemApp.Business
 
                 // Return null or handle the failure as appropriate for your application
                 return null;
+            }
+        }
+
+        internal void AddStudent(IRegisterView view,User user)
+        {
+            try
+            {
+                user.Role = "Student";
+                userRepository.Add(user);
+                // If the registration is successful, show a message to the user
+                view.ShowInformation("Registration is successful. You can sign in now!");
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Handle the case where the email or username is already in use
+                view.ShowError(ex.Message);
             }
         }
     }

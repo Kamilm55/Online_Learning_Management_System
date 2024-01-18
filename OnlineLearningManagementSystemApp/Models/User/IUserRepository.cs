@@ -11,7 +11,7 @@ namespace OnlineLearningManagementSystemApp.Models
         User GetById(long id);
         User GetByUserName(string userName);
         User GetByEmail(string email);
-        void Add(User user);
+        bool Add(User user);
         void Delete(long userId);
        // void Update(User user);
         List<User> GetAll();

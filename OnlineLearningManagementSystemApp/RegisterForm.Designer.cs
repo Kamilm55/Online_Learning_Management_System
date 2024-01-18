@@ -37,6 +37,7 @@
             this.registerEmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.linkToLogin = new System.Windows.Forms.LinkLabel();
+            this.guna2MessageRegisterDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,9 @@
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Transparent;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(994, 567);
-            this.guna2ShadowPanel1.TabIndex = 11;            // registerUsernameTextBox
+            this.guna2ShadowPanel1.TabIndex = 11;
+            // 
+            // registerUsernameTextBox
             // 
             this.registerUsernameTextBox.BackColor = System.Drawing.Color.Transparent;
             this.registerUsernameTextBox.BorderColor = System.Drawing.Color.DarkGray;
@@ -87,7 +90,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(58)))), ((int)(((byte)(152)))));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(706, 62);
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(701, 68);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(133, 40);
             this.guna2HtmlLabel1.TabIndex = 14;
@@ -107,6 +110,7 @@
             this.RegisterSubmitBtn.Size = new System.Drawing.Size(287, 49);
             this.RegisterSubmitBtn.TabIndex = 13;
             this.RegisterSubmitBtn.Text = "Sign Up";
+            this.RegisterSubmitBtn.Click += new System.EventHandler(this.RegisterSubmitBtn_Click);
             // 
             // registerPasswordTextBox
             // 
@@ -125,11 +129,12 @@
             this.registerPasswordTextBox.Location = new System.Drawing.Point(636, 215);
             this.registerPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.registerPasswordTextBox.Name = "registerPasswordTextBox";
-            this.registerPasswordTextBox.PasswordChar = '\0';
+            this.registerPasswordTextBox.PasswordChar = '●';
             this.registerPasswordTextBox.PlaceholderText = "Enter your password";
             this.registerPasswordTextBox.SelectedText = "";
             this.registerPasswordTextBox.Size = new System.Drawing.Size(287, 53);
             this.registerPasswordTextBox.TabIndex = 12;
+            this.registerPasswordTextBox.UseSystemPasswordChar = true;
             // 
             // registerEmailTextBox
             // 
@@ -145,7 +150,7 @@
             this.registerEmailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.registerEmailTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.registerEmailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.registerEmailTextBox.Location = new System.Drawing.Point(636, 134);
+            this.registerEmailTextBox.Location = new System.Drawing.Point(636, 138);
             this.registerEmailTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.registerEmailTextBox.Name = "registerEmailTextBox";
             this.registerEmailTextBox.PasswordChar = '\0';
@@ -153,6 +158,7 @@
             this.registerEmailTextBox.SelectedText = "";
             this.registerEmailTextBox.Size = new System.Drawing.Size(287, 53);
             this.registerEmailTextBox.TabIndex = 11;
+            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.BorderRadius = 8;
@@ -172,12 +178,23 @@
             // 
             this.linkToLogin.AutoSize = true;
             this.linkToLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkToLogin.Location = new System.Drawing.Point(733, 443);
+            this.linkToLogin.Location = new System.Drawing.Point(722, 443);
             this.linkToLogin.Name = "linkToLogin";
             this.linkToLogin.Size = new System.Drawing.Size(117, 18);
             this.linkToLogin.TabIndex = 6;
             this.linkToLogin.TabStop = true;
             this.linkToLogin.Text = "Go to login page";
+            this.linkToLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkToLogin_LinkClicked_1);
+            // 
+            // guna2MessageRegisterDialog
+            // 
+            this.guna2MessageRegisterDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageRegisterDialog.Caption = null;
+            this.guna2MessageRegisterDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.guna2MessageRegisterDialog.Parent = this;
+            this.guna2MessageRegisterDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageRegisterDialog.Text = null;
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -187,6 +204,7 @@
             this.Controls.Add(this.guna2ShadowPanel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -205,5 +223,6 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.LinkLabel linkToLogin;
         private Guna.UI2.WinForms.Guna2TextBox registerUsernameTextBox;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageRegisterDialog;
     }
 }

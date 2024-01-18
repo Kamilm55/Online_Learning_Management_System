@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Views
 {
-    public interface ILoginView
+    public interface ILoginView : IAuthView
     {
-        string Email { get; set; }
-        string Password { get; set; }
         void ShowMessage(string message);
-        void ShowInformation(string message, string caption = "Information");
-        void ShowWarning(string message, string caption = "Warning");
-        void ShowError(string message, string caption = "Error");
        // Guna2MessageDialog ShowConfirmation(string message, string caption = "Confirmation");
         //bool IsLoggedIn { get; set; }
     }

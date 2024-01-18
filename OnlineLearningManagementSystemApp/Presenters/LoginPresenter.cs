@@ -33,14 +33,14 @@ namespace OnlineLearningManagementSystemApp.Presenters
             string password = view.Password;
 
             // Validate email and password using the utility method
-            bool validationSuccessful = authUtils.ValidateEmailAndPassword(view, email, password);
+            bool validationSuccessful = authUtils.ValidateCredentials(view, email, password);
 
             // If validation fails, return and display a warning message
             if (!validationSuccessful)
             {
                 return;
             }
-            // auth business logic method
+            // auth business login method
             User user = authBusiness.AuthenticateUser(view,email,password);
 
             if (user != null)
@@ -49,7 +49,7 @@ namespace OnlineLearningManagementSystemApp.Presenters
                 view.ShowInformation("Login successful. Welcome to Online Learning Management System");
             }
 
-            /// implement role based auth
+            // implement role based auth
             
         }
 

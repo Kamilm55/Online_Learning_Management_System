@@ -41,8 +41,12 @@ namespace OnlineLearningManagementSystemApp
             Password = loginPasswordTextBox.Text;
             // Notify the presenter that login button is clicked
             LoginButtonClicked?.Invoke(this, EventArgs.Empty);
+
+            // Clear the textboxes after login
+            ClearTextboxes();
         }
 
+       
         private void linkToRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
@@ -73,6 +77,12 @@ namespace OnlineLearningManagementSystemApp
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
+        }
+
+        public void ClearTextboxes()
+        {
+            loginEmailTextBox.Text = string.Empty;
+            loginEmailTextBox.Text = string.Empty;
         }
     }
 }

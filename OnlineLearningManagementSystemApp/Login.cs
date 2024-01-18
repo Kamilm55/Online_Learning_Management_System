@@ -108,6 +108,11 @@ private IEnrollmentRepository enrollmentRepository;*/
             throw new NotImplementedException();
         }
 
+        public void ClearTextboxes()
+        {
+            throw new NotImplementedException();
+        }
+
         /*private void loginEmailTextBox_TextChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("changes");
