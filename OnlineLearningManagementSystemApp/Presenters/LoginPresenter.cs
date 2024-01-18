@@ -1,4 +1,5 @@
 ﻿using OnlineLearningManagementSystemApp.Models;
+using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,14 @@ namespace OnlineLearningManagementSystemApp.Presenters
     public class LoginRegisterPresenter
     {
         private readonly ILoginView view;
-        private readonly IUserRepository userRepository = new UserRepository();
+        private readonly AuthUtils authUtils;
+        private readonly IUserRepository userRepository;
 
-        public LoginRegisterPresenter(ILoginView view, IUserRepository userRepository)
+        public LoginRegisterPresenter(ILoginView view)
         {
             this.view = view;
-            this.userRepository = userRepository;
+            this.userRepository = new UserRepository();
+            authUtils = new AuthUtils();
         }
 
         public void OnLoginButtonClicked(object sender, EventArgs e)
@@ -26,14 +29,38 @@ namespace OnlineLearningManagementSystemApp.Presenters
             string email = view.Email;
             string password = view.Password;
 
-            // Validate credentials, etc.
-            Debug.WriteLine("email,pass : " + email + " " + password); 
+            // Validate email and password using the utility method
+            bool validationSuccessful = authUtils.ValidateEmailAndPassword(view, email, password);
 
-            // Show a message to the user
-            view.ShowMessage("Login clicked. Implement login logic here.");
+            // If validation fails, return and display a warning message
+            if (!validationSuccessful)
+            {
+                return;
+            }
+            // auth business logic method
+
+
+            // Additional authentication logic can be added here
+
+            // For demonstration purposes, let's assume authentication failed
+            bool authenticationFailed = true;
+
+            if (authenticationFailed)
+            {
+                // Show a warning message for authentication failure
+                view.ShowMessage("Authentication failed. Please check your credentials.");
+            }
+            else
+            {
+                // Successful authentication logic can be added here
+
+                // Show a message to the user for successful login
+                view.ShowMessage("Login successful. Implement successful login logic here.");
+            }
         }
 
-       
+
+
     }
 
 }

@@ -34,16 +34,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.online_learning_management_system_dbDataSet = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSet();
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.courseTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.CourseTableAdapter();
             this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructorIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.online_learning_management_system_dbDataSet = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSet();
+            this.courseTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.CourseTableAdapter();
+            this.textBoxMain = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.loginSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.loginPasswordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.maintest = new Guna.UI2.WinForms.Guna2TextBox();
+            this.linkToRegister = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -114,20 +120,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // online_learning_management_system_dbDataSet
-            // 
-            this.online_learning_management_system_dbDataSet.DataSetName = "online_learning_management_system_dbDataSet";
-            this.online_learning_management_system_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataMember = "Course";
-            this.courseBindingSource.DataSource = this.online_learning_management_system_dbDataSet;
-            // 
-            // courseTableAdapter
-            // 
-            this.courseTableAdapter.ClearBeforeFill = true;
-            // 
             // courseIDDataGridViewTextBoxColumn
             // 
             this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
@@ -157,19 +149,144 @@
             this.instructorIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.instructorIDDataGridViewTextBoxColumn.Name = "instructorIDDataGridViewTextBoxColumn";
             // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataMember = "Course";
+            this.courseBindingSource.DataSource = this.online_learning_management_system_dbDataSet;
+            // 
+            // online_learning_management_system_dbDataSet
+            // 
+            this.online_learning_management_system_dbDataSet.DataSetName = "online_learning_management_system_dbDataSet";
+            this.online_learning_management_system_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // courseTableAdapter
+            // 
+            this.courseTableAdapter.ClearBeforeFill = true;
+            // 
+            // textBoxMain
+            // 
+            this.textBoxMain.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxMain.DefaultText = "";
+            this.textBoxMain.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxMain.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxMain.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxMain.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxMain.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxMain.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBoxMain.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxMain.Location = new System.Drawing.Point(146, 414);
+            this.textBoxMain.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.PasswordChar = '\0';
+            this.textBoxMain.PlaceholderText = "";
+            this.textBoxMain.SelectedText = "";
+            this.textBoxMain.Size = new System.Drawing.Size(229, 48);
+            this.textBoxMain.TabIndex = 2;
+            this.textBoxMain.TextChanged += new System.EventHandler(this.textBoxMain_TextChanged);
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(58)))), ((int)(((byte)(152)))));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(830, 215);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(186, 40);
+            this.guna2HtmlLabel2.TabIndex = 19;
+            this.guna2HtmlLabel2.Text = "Course App";
+            // 
+            // loginSubmitBtn
+            // 
+            this.loginSubmitBtn.BorderRadius = 6;
+            this.loginSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.loginSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.loginSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.loginSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.loginSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.loginSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.loginSubmitBtn.Location = new System.Drawing.Point(792, 453);
+            this.loginSubmitBtn.Name = "loginSubmitBtn";
+            this.loginSubmitBtn.Size = new System.Drawing.Size(287, 49);
+            this.loginSubmitBtn.TabIndex = 18;
+            this.loginSubmitBtn.Text = "Sign In";
+            // 
+            // loginPasswordTextBox
+            // 
+            this.loginPasswordTextBox.BackColor = System.Drawing.Color.Transparent;
+            this.loginPasswordTextBox.BorderColor = System.Drawing.Color.DarkGray;
+            this.loginPasswordTextBox.BorderRadius = 6;
+            this.loginPasswordTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.loginPasswordTextBox.DefaultText = "";
+            this.loginPasswordTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.loginPasswordTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.loginPasswordTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.loginPasswordTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.loginPasswordTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loginPasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.loginPasswordTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loginPasswordTextBox.Location = new System.Drawing.Point(792, 378);
+            this.loginPasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loginPasswordTextBox.Name = "loginPasswordTextBox";
+            this.loginPasswordTextBox.PasswordChar = '\0';
+            this.loginPasswordTextBox.PlaceholderText = "Enter your password";
+            this.loginPasswordTextBox.SelectedText = "";
+            this.loginPasswordTextBox.Size = new System.Drawing.Size(287, 53);
+            this.loginPasswordTextBox.TabIndex = 17;
+            // 
+            // maintest
+            // 
+            this.maintest.BackColor = System.Drawing.Color.Transparent;
+            this.maintest.BorderColor = System.Drawing.Color.DarkGray;
+            this.maintest.BorderRadius = 6;
+            this.maintest.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.maintest.DefaultText = "";
+            this.maintest.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.maintest.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.maintest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.maintest.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.maintest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.maintest.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.maintest.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.maintest.Location = new System.Drawing.Point(792, 297);
+            this.maintest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.maintest.Name = "maintest";
+            this.maintest.PasswordChar = '\0';
+            this.maintest.PlaceholderText = "Enter your email";
+            this.maintest.SelectedText = "";
+            this.maintest.Size = new System.Drawing.Size(287, 53);
+            this.maintest.TabIndex = 16;
+            this.maintest.TextChanged += new System.EventHandler(this.maintest_TextChanged);
+            // 
+            // linkToRegister
+            // 
+            this.linkToRegister.AutoSize = true;
+            this.linkToRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkToRegister.Location = new System.Drawing.Point(816, 544);
+            this.linkToRegister.Name = "linkToRegister";
+            this.linkToRegister.Size = new System.Drawing.Size(222, 18);
+            this.linkToRegister.TabIndex = 15;
+            this.linkToRegister.TabStop = true;
+            this.linkToRegister.Text = "Don\'t have an account? Register";
+            // 
             // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 683);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.loginSubmitBtn);
+            this.Controls.Add(this.loginPasswordTextBox);
+            this.Controls.Add(this.maintest);
+            this.Controls.Add(this.linkToRegister);
+            this.Controls.Add(this.textBoxMain);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Name = "MainPage";
             this.Text = "MainPage";
             this.Load += new System.EventHandler(this.MainPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,5 +303,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructorIDDataGridViewTextBoxColumn;
+        private Guna.UI2.WinForms.Guna2TextBox textBoxMain;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Button loginSubmitBtn;
+        private Guna.UI2.WinForms.Guna2TextBox loginPasswordTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox maintest;
+        private System.Windows.Forms.LinkLabel linkToRegister;
     }
 }

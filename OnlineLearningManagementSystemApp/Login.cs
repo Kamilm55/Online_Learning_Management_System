@@ -1,4 +1,5 @@
-﻿using OnlineLearningManagementSystemApp.Models;
+﻿using Guna.UI2.WinForms;
+using OnlineLearningManagementSystemApp.Models;
 using OnlineLearningManagementSystemApp.Presenters;
 using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
@@ -42,33 +43,67 @@ private IEnrollmentRepository enrollmentRepository;*/
         {
             InitializeComponent();
             // Assuming you have an instance of LoginRegisterPresenter in your class
-            var presenter = new LoginRegisterPresenter(this, new UserRepository());
+            var presenter = new LoginRegisterPresenter(this);
+
+            this.StartPosition = FormStartPosition.CenterScreen;
 
             // Subscribe to view events
             LoginButtonClicked += presenter.OnLoginButtonClicked;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+       /* private void guna2Button1_Click(object sender, EventArgs e)
         {
             // Notify the presenter that login button is clicked
             LoginButtonClicked?.Invoke(this, EventArgs.Empty);
-        }
+        }*/
 
         public void ShowMessage(string message)
         {
             MessageBox.Show(message);
         }
 
-        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        private void loginEmailTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine(loginEmailTextBox.Text);
+        }
+
+        private void loginSubmitBtn_Click(object sender, EventArgs e)
+        {
+            ShowMessage(loginEmailTextBox.Text);
+        }
+
+        private void linkToRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MainPage mainPage = new MainPage();
+            mainPage.Show();
+        }
+
+        private void test_TextChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine(test.Text);
+        }
+
+        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        /*private void loginEmailTextBox_TextChanged(object sender, EventArgs e)
         {
             Debug.WriteLine("changes");
-            Email = guna2TextBox1.Text;
+            Email = loginEmailTextBox.Text;
             //  Password = guna2TextBox2.Text;
-            Debug.WriteLine(guna2TextBox1.Text);
+            Debug.WriteLine(loginEmailTextBox.Text);
             Debug.WriteLine(Email + " " + Password);
-            Email = "smth";
-            // AuthUtils.PopulateLoginPayload(Email,Password, guna2TextBox1.Text, guna2TextBox2.Text);
-        }
+        }*/
+
+
+
+
+
+
+
+
 
         //
         /*

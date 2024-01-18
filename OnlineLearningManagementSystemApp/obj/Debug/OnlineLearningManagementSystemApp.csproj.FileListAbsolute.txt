@@ -16,3 +16,4 @@ C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagemen
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.RegisterForm.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.Login.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.MainPage.resources
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.LoginForm.resources
