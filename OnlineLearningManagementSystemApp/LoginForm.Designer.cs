@@ -36,7 +36,7 @@
             this.loginEmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.linkToRegister = new System.Windows.Forms.LinkLabel();
-            this.guna2MessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2MessageDialogLogin = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -159,15 +159,16 @@
             this.linkToRegister.TabIndex = 6;
             this.linkToRegister.TabStop = true;
             this.linkToRegister.Text = "Don\'t have an account? Register";
+            this.linkToRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkToRegister_LinkClicked);
             // 
-            // guna2MessageDialog1
+            // guna2MessageDialogLogin
             // 
-            this.guna2MessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.guna2MessageDialog1.Caption = null;
-            this.guna2MessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.guna2MessageDialog1.Parent = this;
-            this.guna2MessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Default;
-            this.guna2MessageDialog1.Text = null;
+            this.guna2MessageDialogLogin.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.guna2MessageDialogLogin.Caption = null;
+            this.guna2MessageDialogLogin.Icon = Guna.UI2.WinForms.MessageDialogIcon.Information;
+            this.guna2MessageDialogLogin.Parent = this;
+            this.guna2MessageDialogLogin.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.guna2MessageDialogLogin.Text = null;
             // 
             // LoginForm
             // 
@@ -195,6 +196,6 @@
         private Guna.UI2.WinForms.Guna2TextBox loginEmailTextBox;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.LinkLabel linkToRegister;
-        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialog1;
+        private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialogLogin;
     }
 }

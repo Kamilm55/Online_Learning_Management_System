@@ -16,13 +16,11 @@ namespace OnlineLearningManagementSystemApp.Business
     internal class AuthBusiness
     {
         private IUserRepository userRepository;
-        private GunaMessageDialogUtils messageDialog;
         public AuthBusiness() 
         { 
             userRepository = new UserRepository();
-            messageDialog = new GunaMessageDialogUtils();
         }
-        public User AuthenticateUser(string email, string password)
+        public User AuthenticateUser(ILoginView view,string email, string password)
         {
             try
             {
@@ -46,8 +44,7 @@ namespace OnlineLearningManagementSystemApp.Business
             catch (AuthenticationException authEx)
             {
                 // Display authentication exception message in a MessageBox
-               // MessageBox.Show(authEx.Message, "Authentication Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                messageDialog.ShowError(authEx.Message);
+                view.ShowError(authEx.Message);
 
                 // Return null or handle the failure as appropriate for your application
                 return null;
@@ -55,8 +52,7 @@ namespace OnlineLearningManagementSystemApp.Business
             catch (Exception ex)
             {
                 // Display a generic error message in a MessageBox for unexpected exceptions
-               // view.ShowMessage("An unexpected error occurred during authentication.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                messageDialog.ShowError("An unexpected error occurred during authentication.", "Error");
+                view.ShowError("An unexpected error occurred during authentication.", "Error");
                 // Log or handle the unexpected exception as needed
                 Console.WriteLine(ex.Message);
 

@@ -1,4 +1,5 @@
-﻿using OnlineLearningManagementSystemApp.Models;
+﻿using OnlineLearningManagementSystemApp.Business;
+using OnlineLearningManagementSystemApp.Models;
 using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
 using System;
@@ -10,17 +11,19 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Presenters
 {
-    public class LoginRegisterPresenter
+    public class LoginPresenter
     {
         private readonly ILoginView view;
         private readonly AuthUtils authUtils;
         private readonly IUserRepository userRepository;
+        private readonly  AuthBusiness authBusiness;
 
-        public LoginRegisterPresenter(ILoginView view)
+        public LoginPresenter(ILoginView view)
         {
             this.view = view;
             this.userRepository = new UserRepository();
             authUtils = new AuthUtils();
+            authBusiness = new AuthBusiness();
         }
 
         public void OnLoginButtonClicked(object sender, EventArgs e)
@@ -38,25 +41,16 @@ namespace OnlineLearningManagementSystemApp.Presenters
                 return;
             }
             // auth business logic method
+            User user = authBusiness.AuthenticateUser(view,email,password);
 
-
-            // Additional authentication logic can be added here
-
-            // For demonstration purposes, let's assume authentication failed
-            bool authenticationFailed = true;
-
-            if (authenticationFailed)
+            if (user != null)
             {
-                // Show a warning message for authentication failure
-                view.ShowMessage("Authentication failed. Please check your credentials.");
-            }
-            else
-            {
-                // Successful authentication logic can be added here
-
                 // Show a message to the user for successful login
-                view.ShowMessage("Login successful. Implement successful login logic here.");
+                view.ShowInformation("Login successful. Welcome to Online Learning Management System");
             }
+
+            /// implement role based auth
+            
         }
 
 

@@ -43,7 +43,7 @@ private IEnrollmentRepository enrollmentRepository;*/
         {
             InitializeComponent();
             // Assuming you have an instance of LoginRegisterPresenter in your class
-            var presenter = new LoginRegisterPresenter(this);
+            var presenter = new LoginPresenter(this);
 
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -86,6 +86,26 @@ private IEnrollmentRepository enrollmentRepository;*/
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void ShowInformation(string message, string caption = "Information")
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowWarning(string message, string caption = "Warning")
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowError(string message, string caption = "Error")
+        {
+            throw new NotImplementedException();
+        }
+
+        public Guna2MessageDialog ShowConfirmation(string message, string caption = "Confirmation")
+        {
+            throw new NotImplementedException();
         }
 
         /*private void loginEmailTextBox_TextChanged(object sender, EventArgs e)

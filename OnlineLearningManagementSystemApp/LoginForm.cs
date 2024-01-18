@@ -1,5 +1,7 @@
-﻿using OnlineLearningManagementSystemApp.Models;
+﻿using Guna.UI2.WinForms;
+using OnlineLearningManagementSystemApp.Models;
 using OnlineLearningManagementSystemApp.Presenters;
+using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
 using System;
 using System.Collections.Generic;
@@ -20,7 +22,9 @@ namespace OnlineLearningManagementSystemApp
         {
             InitializeComponent();
             // Assuming you have an instance of LoginRegisterPresenter in your class
-            var presenter = new LoginRegisterPresenter(this);
+            var presenter = new LoginPresenter(this);
+            //
+            guna2MessageDialogLogin.Style = MessageDialogStyle.Dark;
 
             // Subscribe to view events
             LoginButtonClicked += presenter.OnLoginButtonClicked;
@@ -31,18 +35,44 @@ namespace OnlineLearningManagementSystemApp
         // Events to be handled by the presenter
         public event EventHandler LoginButtonClicked;
 
-
-        public void ShowMessage(string message)
-        {
-            MessageBox.Show(message);
-        }
-
         private void loginSubmitBtn_Click(object sender, EventArgs e)
         {
             Email = loginEmailTextBox.Text;
             Password = loginPasswordTextBox.Text;
             // Notify the presenter that login button is clicked
             LoginButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void linkToRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
+
+        /////////////////////
+
+        // Show information dialog
+        public void ShowInformation(string message, string caption = "Information")
+        {
+            GunaMessageDialogUtils.PrepareShowInformation(guna2MessageDialogLogin, message, caption);   
+        }
+
+        // Show warning dialog
+        public void ShowWarning(string message, string caption = "Warning")
+        {
+            GunaMessageDialogUtils.PrepareShowWarning(guna2MessageDialogLogin, message, caption);
+        }
+
+        // Show error dialog
+        public void ShowError(string message, string caption = "Error")
+        { 
+            GunaMessageDialogUtils.PrepareShowError(guna2MessageDialogLogin, message, caption);
+        }
+
+        public void ShowMessage(string message)
+        {
+            MessageBox.Show(message);
         }
     }
 }

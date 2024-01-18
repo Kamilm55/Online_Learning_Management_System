@@ -5,46 +5,36 @@ namespace OnlineLearningManagementSystemApp.Utils
     public class GunaMessageDialogUtils
     {
 
-        private Guna2MessageDialog guna2MessageDialog ;
-
-        public GunaMessageDialogUtils()
-        {
-            this.guna2MessageDialog =  new Guna2MessageDialog();
-            guna2MessageDialog.Style = MessageDialogStyle.Dark;
-          
-        }
-
         // Show information dialog
-        public void ShowInformation(string message, string caption = "Information")
+        public static void PrepareShowInformation(Guna2MessageDialog guna2MessageDialog, string message, string caption = "Information")
         {
-            guna2MessageDialog.Show(message, caption);
             guna2MessageDialog.Buttons = MessageDialogButtons.OK;
             guna2MessageDialog.Icon = MessageDialogIcon.Information;
+            guna2MessageDialog.Show(message, caption);
         }
 
         // Show warning dialog
-        public void ShowWarning(string message, string caption = "Warning")
+        public static void PrepareShowWarning(Guna2MessageDialog guna2MessageDialog, string message, string caption = "Warning")
         {
-            guna2MessageDialog.Show(message, caption);
             guna2MessageDialog.Buttons = MessageDialogButtons.OK;
             guna2MessageDialog.Icon = MessageDialogIcon.Warning;
+            guna2MessageDialog.Show(message, caption);
         }
 
         // Show error dialog
-        public void ShowError(string message, string caption = "Error")
+        public static void PrepareShowError(Guna2MessageDialog guna2MessageDialog, string message, string caption = "Error")
         {
-            guna2MessageDialog.Show(message, caption);
             guna2MessageDialog.Buttons = MessageDialogButtons.OK;
             guna2MessageDialog.Icon = MessageDialogIcon.Error;
+            guna2MessageDialog.Show(message, caption);
         }
 
         // Show confirmation dialog and return the DialogResult
-        public Guna2MessageDialog  ShowConfirmation(string message, string caption = "Confirmation")
+        public static void PrepareShowConfirmation(Guna2MessageDialog guna2MessageDialog, string message, string caption = "Confirmation")
         {
-             guna2MessageDialog.Show(message, caption);
             guna2MessageDialog.Buttons = MessageDialogButtons.YesNo;
             guna2MessageDialog.Icon = MessageDialogIcon.Question;
-            return guna2MessageDialog;
+            guna2MessageDialog.Show(message, caption);
         }
     }
 }
