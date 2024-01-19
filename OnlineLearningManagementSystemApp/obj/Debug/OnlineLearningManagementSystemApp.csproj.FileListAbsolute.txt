@@ -15,5 +15,6 @@ C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagemen
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\bin\Debug\Guna.UI2.dll
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.RegisterForm.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.Login.resources
-C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.MainPage.resources
 C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.LoginForm.resources
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.StudentMainPage.resources
+C:\Users\User\cs\tasks\OnlineLearningManagementSystemApp\OnlineLearningManagementSystemApp\obj\Debug\OnlineLearningManagementSystemApp.StudentAssesmentPage.resources

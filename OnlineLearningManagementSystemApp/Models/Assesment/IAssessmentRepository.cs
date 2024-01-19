@@ -18,5 +18,6 @@ namespace OnlineLearningManagementSystemApp.Models
         void RemoveUserFromAssessment(long userId, long assessmentId);
         void UpdateAssessmentDueDate(DateTime newDueDate, long assessmentId);
         void UpdateUserGrade(string newGrade, long userId, long assessmentId);
+        List<Assessment> GetAssessmentsForEnrolledCourses(long userId);
     }
 }

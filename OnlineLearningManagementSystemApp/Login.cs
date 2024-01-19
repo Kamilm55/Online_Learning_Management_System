@@ -74,7 +74,7 @@ private IEnrollmentRepository enrollmentRepository;*/
 
         private void linkToRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MainPage mainPage = new MainPage();
+            StudentMainPage mainPage = new StudentMainPage();
             mainPage.Show();
         }
 

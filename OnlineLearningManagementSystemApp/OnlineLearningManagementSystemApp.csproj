@@ -46,6 +46,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -68,6 +69,8 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Business\AuthBusiness.cs" />
+    <Compile Include="Business\IStudentBusinessService.cs" />
+    <Compile Include="Business\StudentBusinessService.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -86,11 +89,17 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainPage.cs">
+    <Compile Include="StudentAssesmentPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainPage.Designer.cs">
-      <DependentUpon>MainPage.cs</DependentUpon>
+    <Compile Include="StudentAssesmentPage.Designer.cs">
+      <DependentUpon>StudentAssesmentPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentMainPage.Designer.cs">
+      <DependentUpon>StudentMainPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -132,6 +141,9 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Roles\Admin.cs" />
+    <Compile Include="Roles\Student.cs" />
+    <Compile Include="Roles\Teacher.cs" />
     <Compile Include="User.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -146,8 +158,11 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainPage.resx">
-      <DependentUpon>MainPage.cs</DependentUpon>
+    <EmbeddedResource Include="StudentAssesmentPage.resx">
+      <DependentUpon>StudentAssesmentPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentMainPage.resx">
+      <DependentUpon>StudentMainPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

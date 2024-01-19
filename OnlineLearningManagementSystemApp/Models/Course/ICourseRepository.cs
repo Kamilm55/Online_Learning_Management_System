@@ -17,5 +17,6 @@ namespace OnlineLearningManagementSystemApp.Models
         void UpdateTitle(string newTitle, long courseId);
         void UpdateDescription(string newDescription, long courseId);
         void UpdateInstructorId(long newInstructorId, long courseId);
+        List<Course> GetEnrolledCoursesForUser(long userId);
     }
 }

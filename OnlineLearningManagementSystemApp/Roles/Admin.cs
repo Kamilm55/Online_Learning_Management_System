@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Roles
 {
-    internal class Admin
+    public class Admin : User
     {
     }
 }

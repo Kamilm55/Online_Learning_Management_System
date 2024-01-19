@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineLearningManagementSystemApp.Roles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -95,6 +96,16 @@ namespace OnlineLearningManagementSystemApp.Models
             {
                 throw new InvalidOperationException("Course not found.");
             }
+        }
+
+        public List<Course> GetEnrolledCoursesForUser(long userId)
+        {
+            var courses = (from enrollment in dbEntities.Enrollments
+                           join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
+                           where enrollment.StudentID == userId
+                           select course).ToList();
+
+            return courses;
         }
     }
 }

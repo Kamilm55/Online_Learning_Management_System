@@ -107,5 +107,16 @@ namespace OnlineLearningManagementSystemApp.Models.Assesment
                 throw new InvalidOperationException("User not found in the specified assessment.");
             }
         }
+
+        public List<Assessment> GetAssessmentsForEnrolledCourses(long userId)
+        {
+            var assessments = (from enrollment in dbEntities.Enrollments
+                               join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
+                               join assessment in dbEntities.Assessments on course.CourseID equals assessment.CourseID
+                               where enrollment.StudentID == userId
+                               select assessment).ToList();
+
+            return assessments;
+        }
     }
 }

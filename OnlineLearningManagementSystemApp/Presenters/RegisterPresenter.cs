@@ -47,8 +47,7 @@ namespace OnlineLearningManagementSystemApp.Presenters
             user.Username = username;
 
             // Attempt to add the user
-            authBusiness.AddStudent(view,user);
-
+            authBusiness.AddStudent(view, user);
            
         }
 

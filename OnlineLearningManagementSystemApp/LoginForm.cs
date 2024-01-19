@@ -82,7 +82,7 @@ namespace OnlineLearningManagementSystemApp
         public void ClearTextboxes()
         {
             loginEmailTextBox.Text = string.Empty;
-            loginEmailTextBox.Text = string.Empty;
+            loginPasswordTextBox.Text = string.Empty;
         }
     }
 }

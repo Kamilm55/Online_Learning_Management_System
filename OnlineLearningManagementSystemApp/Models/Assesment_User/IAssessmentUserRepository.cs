@@ -15,5 +15,6 @@ namespace OnlineLearningManagementSystemApp.Models
         void Add(Assessment_User assessmentUser);
         void Delete(long assessmentUserId);
         void UpdateGrade(string newGrade, long assessmentUserId);
+        
     }
 }

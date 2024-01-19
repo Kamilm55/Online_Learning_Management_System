@@ -40,21 +40,23 @@ namespace OnlineLearningManagementSystemApp.Presenters
             {
                 return;
             }
+
+
             // auth business login method
             User user = authBusiness.AuthenticateUser(view,email,password);
 
             if (user != null)
             {
-                // Show a message to the user for successful login
-                view.ShowInformation("Login successful. Welcome to Online Learning Management System");
-            }
+                // Retrieve user's role from the database
+                User userFromDb = userRepository.GetById(user.UserID);
 
+                // Show a message to the user for successful login
+                view.ShowInformation($"Login successful. Welcome to Online Learning Management System, {userFromDb.Username}!");
+            }
             // implement role based auth
-            
+
         }
 
 
-
     }
-
 }
