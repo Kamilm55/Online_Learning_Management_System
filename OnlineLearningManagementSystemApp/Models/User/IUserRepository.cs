@@ -20,5 +20,6 @@
             void UpdateByEmail(string newEmail,long userId);
             void UpdateByPassword(string newPassword, long userId);
             void UpdateByPhoto(string newPhoto, long userId);
+            List<User> GetStudentsByInstructorId(long instructorId);
         }
     }

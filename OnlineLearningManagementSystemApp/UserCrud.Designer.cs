@@ -31,10 +31,13 @@
             System.Windows.Forms.Label usernameLabel;
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label passwordLabel;
-            this.UserCrSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.UserCrUsernameSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.userCrEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.userCrPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.userCrUsername = new Guna.UI2.WinForms.Guna2TextBox();
+            this.userCrMsgDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.UserCrEmailSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.UserCrPasswordSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
             usernameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
@@ -43,7 +46,7 @@
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
-            usernameLabel.Location = new System.Drawing.Point(324, 88);
+            usernameLabel.Location = new System.Drawing.Point(199, 81);
             usernameLabel.Name = "usernameLabel";
             usernameLabel.Size = new System.Drawing.Size(73, 16);
             usernameLabel.TabIndex = 9;
@@ -52,7 +55,7 @@
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(327, 175);
+            emailLabel.Location = new System.Drawing.Point(202, 159);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(44, 16);
             emailLabel.TabIndex = 11;
@@ -61,29 +64,27 @@
             // passwordLabel
             // 
             passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(327, 250);
+            passwordLabel.Location = new System.Drawing.Point(202, 234);
             passwordLabel.Name = "passwordLabel";
             passwordLabel.Size = new System.Drawing.Size(70, 16);
             passwordLabel.TabIndex = 13;
             passwordLabel.Text = "Password:";
             // 
-            // UserCrSubmitBtn
+            // UserCrUsernameSubmitBtn
             // 
-            this.UserCrSubmitBtn.AutoRoundedCorners = true;
-            this.UserCrSubmitBtn.BorderRadius = 21;
-            this.UserCrSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.UserCrSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.UserCrSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.UserCrSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.UserCrSubmitBtn.FillColor = System.Drawing.Color.Green;
-            this.UserCrSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.UserCrSubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.UserCrSubmitBtn.Location = new System.Drawing.Point(373, 339);
-            this.UserCrSubmitBtn.Name = "UserCrSubmitBtn";
-            this.UserCrSubmitBtn.Size = new System.Drawing.Size(244, 45);
-            this.UserCrSubmitBtn.TabIndex = 47;
-            this.UserCrSubmitBtn.Text = "Submit";
-            this.UserCrSubmitBtn.Click += new System.EventHandler(this.UserCrSubmitBtn_Click);
+            this.UserCrUsernameSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrUsernameSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrUsernameSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserCrUsernameSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserCrUsernameSubmitBtn.FillColor = System.Drawing.Color.Green;
+            this.UserCrUsernameSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserCrUsernameSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.UserCrUsernameSubmitBtn.Location = new System.Drawing.Point(605, 69);
+            this.UserCrUsernameSubmitBtn.Name = "UserCrUsernameSubmitBtn";
+            this.UserCrUsernameSubmitBtn.Size = new System.Drawing.Size(128, 53);
+            this.UserCrUsernameSubmitBtn.TabIndex = 47;
+            this.UserCrUsernameSubmitBtn.Text = "Edit";
+            this.UserCrUsernameSubmitBtn.Click += new System.EventHandler(this.UserCrSubmitBtn_Click);
             // 
             // userCrEmail
             // 
@@ -99,7 +100,7 @@
             this.userCrEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.userCrEmail.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.userCrEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userCrEmail.Location = new System.Drawing.Point(426, 158);
+            this.userCrEmail.Location = new System.Drawing.Point(301, 142);
             this.userCrEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userCrEmail.Name = "userCrEmail";
             this.userCrEmail.PasswordChar = '\0';
@@ -122,7 +123,7 @@
             this.userCrPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.userCrPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.userCrPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userCrPassword.Location = new System.Drawing.Point(426, 234);
+            this.userCrPassword.Location = new System.Drawing.Point(301, 218);
             this.userCrPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userCrPassword.Name = "userCrPassword";
             this.userCrPassword.PasswordChar = '●';
@@ -146,7 +147,7 @@
             this.userCrUsername.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.userCrUsername.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.userCrUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.userCrUsername.Location = new System.Drawing.Point(426, 76);
+            this.userCrUsername.Location = new System.Drawing.Point(301, 69);
             this.userCrUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.userCrUsername.Name = "userCrUsername";
             this.userCrUsername.PasswordChar = '\0';
@@ -155,30 +156,77 @@
             this.userCrUsername.Size = new System.Drawing.Size(287, 53);
             this.userCrUsername.TabIndex = 50;
             // 
+            // userCrMsgDialog
+            // 
+            this.userCrMsgDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.userCrMsgDialog.Caption = null;
+            this.userCrMsgDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.userCrMsgDialog.Parent = this;
+            this.userCrMsgDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.userCrMsgDialog.Text = null;
+            // 
+            // UserCrEmailSubmitBtn
+            // 
+            this.UserCrEmailSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrEmailSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrEmailSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserCrEmailSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserCrEmailSubmitBtn.FillColor = System.Drawing.Color.Green;
+            this.UserCrEmailSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserCrEmailSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.UserCrEmailSubmitBtn.Location = new System.Drawing.Point(605, 142);
+            this.UserCrEmailSubmitBtn.Name = "UserCrEmailSubmitBtn";
+            this.UserCrEmailSubmitBtn.Size = new System.Drawing.Size(128, 53);
+            this.UserCrEmailSubmitBtn.TabIndex = 51;
+            this.UserCrEmailSubmitBtn.Text = "Edit";
+            this.UserCrEmailSubmitBtn.Click += new System.EventHandler(this.UserCrEmailSubmitBtn_Click);
+            // 
+            // UserCrPasswordSubmitBtn
+            // 
+            this.UserCrPasswordSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrPasswordSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.UserCrPasswordSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.UserCrPasswordSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.UserCrPasswordSubmitBtn.FillColor = System.Drawing.Color.Green;
+            this.UserCrPasswordSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.UserCrPasswordSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.UserCrPasswordSubmitBtn.Location = new System.Drawing.Point(605, 218);
+            this.UserCrPasswordSubmitBtn.Name = "UserCrPasswordSubmitBtn";
+            this.UserCrPasswordSubmitBtn.Size = new System.Drawing.Size(128, 53);
+            this.UserCrPasswordSubmitBtn.TabIndex = 52;
+            this.UserCrPasswordSubmitBtn.Text = "Edit";
+            this.UserCrPasswordSubmitBtn.Click += new System.EventHandler(this.UserCrPasswordSubmitBtn_Click);
+            // 
             // UserCrud
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 695);
+            this.Controls.Add(this.UserCrPasswordSubmitBtn);
+            this.Controls.Add(this.UserCrEmailSubmitBtn);
             this.Controls.Add(this.userCrUsername);
             this.Controls.Add(this.userCrPassword);
             this.Controls.Add(this.userCrEmail);
-            this.Controls.Add(this.UserCrSubmitBtn);
+            this.Controls.Add(this.UserCrUsernameSubmitBtn);
             this.Controls.Add(usernameLabel);
             this.Controls.Add(emailLabel);
             this.Controls.Add(passwordLabel);
             this.Name = "UserCrud";
             this.Text = "UserCrud";
             this.Load += new System.EventHandler(this.UserCrud_Load);
+            this.Leave += new System.EventHandler(this.UserCrud_Leave);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button UserCrSubmitBtn;
+        private Guna.UI2.WinForms.Guna2Button UserCrUsernameSubmitBtn;
         private Guna.UI2.WinForms.Guna2TextBox userCrEmail;
         private Guna.UI2.WinForms.Guna2TextBox userCrPassword;
         private Guna.UI2.WinForms.Guna2TextBox userCrUsername;
+        private Guna.UI2.WinForms.Guna2MessageDialog userCrMsgDialog;
+        private Guna.UI2.WinForms.Guna2Button UserCrEmailSubmitBtn;
+        private Guna.UI2.WinForms.Guna2Button UserCrPasswordSubmitBtn;
     }
 }

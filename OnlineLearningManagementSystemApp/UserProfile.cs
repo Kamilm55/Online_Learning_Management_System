@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,7 +49,6 @@ namespace OnlineLearningManagementSystemApp
 
         private void UserPrEditBtn_Click(object sender, EventArgs e)
         {
-
             // Check if the current form is visible
             if (this.Visible)
             {
@@ -58,12 +58,42 @@ namespace OnlineLearningManagementSystemApp
                 // Show the dialog
                 using (UserCrud userCrudForm = new UserCrud(userId))
                 {
-                    userCrudForm.ShowDialog();
-                }
+                    // Subscribe to the FormClosed event of the dialog
+                    userCrudForm.FormClosed += UserCrudForm_FormClosed;
 
-                // Show the current form again after the dialog is closed
-                this.Visible = true;
+                    userCrudForm.ShowDialog();
+
+                    // Retrieve the edited user from the UserCrudForm after it's closed
+                    User editedUser = userCrudForm.EditedUser;
+                }
             }
         }
+
+        private void UserCrudForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // This method is called when the dialog is closed
+
+            // Retrieve the edited user from the UserCrudForm
+            User editedUser = ((UserCrud)sender).EditedUser;
+
+            
+
+            //Debug.WriteLine(editedUser.Username + " " + user.Email);
+            UserPrUsernameLabel.Text = editedUser.Username;
+            UserPrEmailLabel.Text = editedUser.Email;
+
+            string pass = editedUser.Password;
+            string encyrptedPass = "";
+
+            for (int i = 0; i < pass.Length; i++)
+            {
+                encyrptedPass += "*";
+            }
+            UserPrPasswordLabel.Text = encyrptedPass;
+
+            // Show the current form again after the dialog is closed
+            this.Visible = true;
+        }
+
     }
 }

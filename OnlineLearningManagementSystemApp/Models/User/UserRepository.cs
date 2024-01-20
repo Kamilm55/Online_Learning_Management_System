@@ -77,7 +77,7 @@ namespace OnlineLearningManagementSystemApp.Models
             User user = GetById(userId);
             if (GetByUserName(newUsername) != null)
             {
-                throw new InvalidOperationException("This username is in-use , please change your email");
+                throw new InvalidOperationException("This username is in-use , please change your username");
             }
             user.Username = newUsername;
             dbEntities.SaveChanges();
@@ -148,6 +148,24 @@ namespace OnlineLearningManagementSystemApp.Models
             }
         }
 
+        public List<User> GetStudentsByInstructorId(long instructorId)
+        {
+            var students = dbEntities.Users
+                .Join(dbEntities.Enrollments,
+                      user => user.UserID,
+                      enrollment => enrollment.StudentID,
+                      (user, enrollment) => new { user, enrollment })
+                .Join(dbEntities.Courses,
+                      combined => combined.enrollment.CourseID,
+                      course => course.CourseID,
+                      (combined, course) => new { combined.user, combined.enrollment, course })
+                .Where(result => result.course.InstructorID == instructorId && result.user.Role == "Student")
+                .Select(result => result.user)
+                .Distinct()
+                .ToList();
+
+            return students;
+        }
 
 
     }

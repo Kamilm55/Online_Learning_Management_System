@@ -36,7 +36,6 @@ namespace OnlineLearningManagementSystemApp
         private void studentDataComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedLabel = studentDataComboBox.SelectedItem.ToString();
-            Debug.WriteLine(selectedLabel);
 
             List<Assessment> assessments;
 
