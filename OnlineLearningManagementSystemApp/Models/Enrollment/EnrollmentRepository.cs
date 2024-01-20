@@ -54,6 +54,27 @@ namespace OnlineLearningManagementSystemApp.Models
                 throw new InvalidOperationException("Enrollment not found.");
             }
         }
+        public void Delete(long userId, long courseId)
+        {
+            // Assuming you have a method to get enrollment by user and course IDs
+            Enrollment enrollment = GetByUserIdAndCourseId(userId, courseId);
+
+            if (enrollment != null)
+            {
+                dbEntities.Enrollments.Remove(enrollment);
+                dbEntities.SaveChanges();
+            }
+            else
+            {
+                throw new InvalidOperationException("Enrollment not found.");
+            }
+        }
+
+        // Helper method to get enrollment by user and course IDs
+        private Enrollment GetByUserIdAndCourseId(long userId, long courseId)
+        {
+            return dbEntities.Enrollments.FirstOrDefault(enrollment => enrollment.StudentID == userId && enrollment.CourseID == courseId);
+        }
 
         public void UpdateEnrollmentDate(DateTime newEnrollmentDate, long enrollmentId)
         {

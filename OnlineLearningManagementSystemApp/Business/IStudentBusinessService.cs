@@ -10,6 +10,8 @@ namespace OnlineLearningManagementSystemApp.Business
     {
         List<Course> GetEnrolledCoursesForUser(long userId);
         List<Course> GetAllCourses();
+        void EnrollCourse(long studentId , long CourseID);
+        void UnenrollCourse(long studentId, long courseId);
         List<Assessment> GetAssessmentsForEnrolledCourses(long userId);
 
     }

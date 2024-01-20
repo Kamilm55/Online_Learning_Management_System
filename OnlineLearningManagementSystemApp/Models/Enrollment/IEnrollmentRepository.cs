@@ -14,6 +14,7 @@ namespace OnlineLearningManagementSystemApp.Models
         List<Enrollment> GetAll();
         void Add(Enrollment enrollment);
         void Delete(long enrollmentId);
+        void Delete(long userId, long courseId);
         void UpdateEnrollmentDate(DateTime newEnrollmentDate, long enrollmentId);
     }
 }

@@ -18,6 +18,9 @@ namespace OnlineLearningManagementSystemApp
     {
         private IStudentBusinessService studentBusinessService;
 
+        //
+        long exStudentId = 6;
+
         public StudentMainPage()
         {
             InitializeComponent();
@@ -67,10 +70,94 @@ namespace OnlineLearningManagementSystemApp
 
             
         }
-
-        private void guna2Button2_Click(object sender, EventArgs e)
+       
+        private void studentSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            string filterText = studentSearchTextBox.Text.Trim();
 
+            // Check if the filter text is empty
+            if (string.IsNullOrWhiteSpace(filterText))
+            {
+                // Clear the filter to show all rows
+                courseBindingSource.RemoveFilter();
+            }
+            else
+            {
+                // Apply a filter based on the entered text
+                // You can customize this filter based on your specific requirements
+                string filterExpression = $"Title LIKE '%{filterText}%' OR Description LIKE '%{filterText}%' OR Convert(CourseID, 'System.String') LIKE '%{filterText}%' OR Convert(InstructorID, 'System.String') LIKE '%{filterText}%'";
+                courseBindingSource.Filter = filterExpression;
+            }
         }
+
+        private void studentEnrollCourseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Attempt to parse the text in the TextBox to a long
+                if (long.TryParse(studentEnrollCourseTextBox.Text, out long courseId))
+                {
+                    // Use the studentId as needed, e.g., enroll the student in a course
+                    studentBusinessService.EnrollCourse(exStudentId, courseId);
+                }
+                else
+                {
+                    // Parsing failed, handle the case where the input is not a valid long
+                    throw new FormatException("Invalid student ID. Please enter a valid numeric value.");
+                }
+            }
+            catch (FormatException ex)
+            {
+                // Handle FormatException (invalid numeric input)
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            UpdateEnrolledCourses(exStudentId);
+        }
+
+        private void UpdateEnrolledCourses(long userId)
+        {
+            List<Course> enrolledCourses = studentBusinessService.GetEnrolledCoursesForUser(userId);
+
+            // update data grid view (courseBindingSource)
+            courseBindingSource.DataSource = enrolledCourses;
+        }
+
+        private void studentUnenrollCourseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Attempt to parse the text in the TextBox to a long
+                if (long.TryParse(studentUnenrollCourseTextBox.Text, out long courseId))
+                {
+                    // Use the studentId as needed, e.g., unenroll the student from a course
+                    studentBusinessService.UnenrollCourse(exStudentId, courseId);
+                }
+                else
+                {
+                    // Parsing failed, handle the case where the input is not a valid long
+                    throw new FormatException("Invalid course ID. Please enter a valid numeric value.");
+                }
+            }
+            catch (FormatException ex)
+            {
+                // Handle FormatException (invalid numeric input)
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                // Handle other exceptions
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            UpdateEnrolledCourses(exStudentId);
+        }
+
+
+        //public void ClearTextBoxValue()
     }
 }
