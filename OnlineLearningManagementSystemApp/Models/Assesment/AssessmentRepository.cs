@@ -108,27 +108,47 @@ namespace OnlineLearningManagementSystemApp.Models.Assesment
             }
         }
 
+        /*  public List<Assessment> GetAssessmentsForEnrolledCourses(long userId)
+          {
+              var assessments = (from enrollment in dbEntities.Enrollments
+                                 join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
+                                 join assessment in dbEntities.Assessments on course.CourseID equals assessment.CourseID
+                                 where enrollment.StudentID == userId
+                                 select assessment).ToList();
+
+              return assessments;
+          }*/
         public List<Assessment> GetAssessmentsForEnrolledCourses(long userId)
         {
-            var assessments = (from enrollment in dbEntities.Enrollments
-                               join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
-                               join assessment in dbEntities.Assessments on course.CourseID equals assessment.CourseID
-                               where enrollment.StudentID == userId
-                               select assessment).ToList();
+            var assessments = dbEntities.Assessment_User
+                .Where(au => au.UserID == userId/* && au.Grade == "NOT_GRADED"*/)
+                .Select(au => au.Assessment)
+                .Distinct()
+                .ToList();
 
             return assessments;
         }
 
         public List<Assessment> GetNonGradedAssessmentsForEnrolledCourses(long userId)
         {
-            var nonGradedAssessments = (from enrollment in dbEntities.Enrollments
-                                        join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
-                                        join assessment in dbEntities.Assessments on course.CourseID equals assessment.CourseID
-                                        where enrollment.StudentID == userId
-                                        && !dbEntities.Assessment_User.Any(au => au.UserID == userId && au.AssessmentID == assessment.AssessmentID && au.Grade != "NOT_GRADED")
-                                        select assessment).ToList();
+            var nonGradedAssessments = dbEntities.Assessment_User
+                .Where(au => au.UserID == userId && au.Grade == "NOT_GRADED")
+                .Select(au => au.Assessment)
+                .Distinct()
+                .ToList();
 
             return nonGradedAssessments;
+        }
+
+        public List<Assessment> GetGradedAssessmentsForEnrolledCourses(long userId)
+        {
+            var gradedAssessments = dbEntities.Assessment_User
+                .Where(au => au.UserID == userId && au.Grade != "NOT_GRADED")
+                .Select(au => au.Assessment)
+                .Distinct()
+                .ToList();
+
+            return gradedAssessments;
         }
 
     }

@@ -20,6 +20,6 @@ namespace OnlineLearningManagementSystemApp.Models
         void UpdateUserGrade(string newGrade, long userId, long assessmentId);
         List<Assessment> GetAssessmentsForEnrolledCourses(long userId);
         List<Assessment> GetNonGradedAssessmentsForEnrolledCourses(long userId);
-        
+        List<Assessment> GetGradedAssessmentsForEnrolledCourses(long userId);
     }
 }

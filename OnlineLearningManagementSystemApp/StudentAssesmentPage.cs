@@ -46,11 +46,9 @@ namespace OnlineLearningManagementSystemApp
                     assessments = assessmentRepository.GetAssessmentsForEnrolledCourses(exStudentId);
                     break;
 
-                /* case "Graded Assessments":
-                     assessments = assessmentRepository.GetAssessmentsForEnrolledCourses(userId)
-                         .Where(a => a.Grade != "NOT_GRADED")
-                         .ToList();
-                     break;*/
+                case "Graded Assessments":
+                    assessments = assessmentRepository.GetGradedAssessmentsForEnrolledCourses(exStudentId);
+                    break;
 
                 case "Non-graded Assessments":
                     assessments = assessmentRepository.GetNonGradedAssessmentsForEnrolledCourses(exStudentId);
@@ -61,25 +59,39 @@ namespace OnlineLearningManagementSystemApp
                     throw new ArgumentException("Invalid label provided.");
             }
 
-            // to update assesments
-            foreach (var item in assessments)
-            {
-                Debug.WriteLine(item.AssessmentID);
-                Debug.WriteLine(item.Assessment_User);
-                Debug.WriteLine(item.Course);
-            }
+           
             BindAssessments(assessments);
             //  presenter.LoadAssessments(exStudentId, selectedLabel); // Assuming 6 is the user ID
         }
-
         private void StAssTExtBox_TextChanged(object sender, EventArgs e)
         {
-            // Handle text changed event if needed
+                string filterText = StAssTExtBox.Text.Trim();
+
+                // Check if the filter text is empty
+                if (string.IsNullOrWhiteSpace(filterText))
+                {
+                    // Clear the filter to show all rows
+                    assessmentBindingSource.RemoveFilter();
+                }
+                else
+                {
+                    // Apply a filter based on the entered text
+                    // Customize this filter based on your specific requirements
+                    Debug.WriteLine(filterText);
+                    string filterExpression = $"Title LIKE '%{filterText}%' OR Convert(AssessmentID, 'System.String') LIKE '%{filterText}%' OR Convert(CourseID, 'System.String') LIKE '%{filterText}%' OR Convert(DueDate, 'System.String') LIKE '%{filterText}%'";
+
+                assessmentBindingSource.Filter = filterExpression;
+                Debug.WriteLine(filterExpression);
+                }
+            
+           
         }
+
 
         private void StAssSubmitBtn_Click(object sender, EventArgs e)
         {
             // Handle submit button click event if needed
+
         }
 
         public void BindAssessments(List<Assessment> assessments)

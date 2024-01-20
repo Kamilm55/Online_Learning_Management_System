@@ -17,7 +17,8 @@ namespace OnlineLearningManagementSystemApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new StudentAssesmentPage());
+            //  Application.Run(new StudentAssesmentPage());
+            Application.Run(new UserProfile(6));
         }
     }
 }
