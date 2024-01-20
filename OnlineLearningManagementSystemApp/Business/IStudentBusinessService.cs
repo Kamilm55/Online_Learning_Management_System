@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Business
 {
-    internal interface IStudentBusinessService
+    public interface IStudentBusinessService
     {
         List<Course> GetEnrolledCoursesForUser(long userId);
         List<Course> GetAllCourses();
         void EnrollCourse(long studentId , long CourseID);
         void UnenrollCourse(long studentId, long courseId);
+
         List<Assessment> GetAssessmentsForEnrolledCourses(long userId);
 
     }

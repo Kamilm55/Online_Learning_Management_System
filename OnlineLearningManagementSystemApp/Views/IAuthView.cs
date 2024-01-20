@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Views
 {
-    public interface IAuthView
+    public interface IAuthView : IView
     {
         string Email { get; set; }
         string Password { get; set; }
-        void ShowInformation(string message, string caption = "Information");
-        void ShowWarning(string message, string caption = "Warning");
-        void ShowError(string message, string caption = "Error");
         void ClearTextboxes();
     }
 }

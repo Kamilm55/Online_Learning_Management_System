@@ -118,5 +118,18 @@ namespace OnlineLearningManagementSystemApp.Models.Assesment
 
             return assessments;
         }
+
+        public List<Assessment> GetNonGradedAssessmentsForEnrolledCourses(long userId)
+        {
+            var nonGradedAssessments = (from enrollment in dbEntities.Enrollments
+                                        join course in dbEntities.Courses on enrollment.CourseID equals course.CourseID
+                                        join assessment in dbEntities.Assessments on course.CourseID equals assessment.CourseID
+                                        where enrollment.StudentID == userId
+                                        && !dbEntities.Assessment_User.Any(au => au.UserID == userId && au.AssessmentID == assessment.AssessmentID && au.Grade != "NOT_GRADED")
+                                        select assessment).ToList();
+
+            return nonGradedAssessments;
+        }
+
     }
 }

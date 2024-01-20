@@ -28,43 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.assessmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assessmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.online_learning_management_system_dbDataSet = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSet();
             this.SearchlabelMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.StAssTExtBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.StAssSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.studentDataComboBox = new System.Windows.Forms.ComboBox();
+            this.assessmentTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.AssessmentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.guna2DataGridView1.AutoGenerateColumns = false;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.guna2DataGridView1.ColumnHeadersHeight = 35;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessmentIDDataGridViewTextBoxColumn,
+            this.courseIDDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.dueDateDataGridViewTextBoxColumn});
+            this.guna2DataGridView1.DataSource = this.assessmentBindingSource;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(331, 59);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -96,6 +113,45 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
+            // assessmentIDDataGridViewTextBoxColumn
+            // 
+            this.assessmentIDDataGridViewTextBoxColumn.DataPropertyName = "AssessmentID";
+            this.assessmentIDDataGridViewTextBoxColumn.HeaderText = "AssessmentID";
+            this.assessmentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assessmentIDDataGridViewTextBoxColumn.Name = "assessmentIDDataGridViewTextBoxColumn";
+            this.assessmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "DueDate";
+            this.dueDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            // 
+            // assessmentBindingSource
+            // 
+            this.assessmentBindingSource.DataMember = "Assessment";
+            this.assessmentBindingSource.DataSource = this.online_learning_management_system_dbDataSet;
+            // 
+            // online_learning_management_system_dbDataSet
+            // 
+            this.online_learning_management_system_dbDataSet.DataSetName = "online_learning_management_system_dbDataSet";
+            this.online_learning_management_system_dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // SearchlabelMain
             // 
             this.SearchlabelMain.BackColor = System.Drawing.Color.Transparent;
@@ -105,40 +161,42 @@
             this.SearchlabelMain.TabIndex = 15;
             this.SearchlabelMain.Text = "Search";
             // 
-            // guna2TextBox1
+            // StAssTExtBox
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(69, 166);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(245, 36);
-            this.guna2TextBox1.TabIndex = 14;
+            this.StAssTExtBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.StAssTExtBox.DefaultText = "";
+            this.StAssTExtBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.StAssTExtBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.StAssTExtBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StAssTExtBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.StAssTExtBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StAssTExtBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StAssTExtBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.StAssTExtBox.Location = new System.Drawing.Point(69, 166);
+            this.StAssTExtBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.StAssTExtBox.Name = "StAssTExtBox";
+            this.StAssTExtBox.PasswordChar = '\0';
+            this.StAssTExtBox.PlaceholderText = "";
+            this.StAssTExtBox.SelectedText = "";
+            this.StAssTExtBox.Size = new System.Drawing.Size(245, 36);
+            this.StAssTExtBox.TabIndex = 14;
+            this.StAssTExtBox.TextChanged += new System.EventHandler(this.StAssTExtBox_TextChanged);
             // 
-            // guna2Button3
+            // StAssSubmitBtn
             // 
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Green;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(17, 308);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button3.TabIndex = 19;
-            this.guna2Button3.Text = "guna2Button3";
+            this.StAssSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.StAssSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.StAssSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.StAssSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.StAssSubmitBtn.FillColor = System.Drawing.Color.Green;
+            this.StAssSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.StAssSubmitBtn.ForeColor = System.Drawing.Color.White;
+            this.StAssSubmitBtn.Location = new System.Drawing.Point(17, 308);
+            this.StAssSubmitBtn.Name = "StAssSubmitBtn";
+            this.StAssSubmitBtn.Size = new System.Drawing.Size(180, 45);
+            this.StAssSubmitBtn.TabIndex = 19;
+            this.StAssSubmitBtn.Text = "Submit";
+            this.StAssSubmitBtn.Click += new System.EventHandler(this.StAssSubmitBtn_Click);
             // 
             // guna2TextBox3
             // 
@@ -183,12 +241,18 @@
             this.studentDataComboBox.DisplayMember = "All Courses";
             this.studentDataComboBox.FormattingEnabled = true;
             this.studentDataComboBox.Items.AddRange(new object[] {
-            "All Assesments",
-            "Graded Assesments"});
+            "All Assessments",
+            "Graded Assessments",
+            "Non-graded Assessments"});
             this.studentDataComboBox.Location = new System.Drawing.Point(31, 83);
             this.studentDataComboBox.Name = "studentDataComboBox";
             this.studentDataComboBox.Size = new System.Drawing.Size(236, 24);
             this.studentDataComboBox.TabIndex = 20;
+            this.studentDataComboBox.SelectedIndexChanged += new System.EventHandler(this.studentDataComboBox_SelectedIndexChanged);
+            // 
+            // assessmentTableAdapter
+            // 
+            this.assessmentTableAdapter.ClearBeforeFill = true;
             // 
             // StudentAssesmentPage
             // 
@@ -197,15 +261,18 @@
             this.ClientSize = new System.Drawing.Size(943, 565);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.studentDataComboBox);
-            this.Controls.Add(this.guna2Button3);
+            this.Controls.Add(this.StAssSubmitBtn);
             this.Controls.Add(this.guna2TextBox3);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.SearchlabelMain);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.StAssTExtBox);
             this.Controls.Add(this.guna2DataGridView1);
             this.Name = "StudentAssesmentPage";
             this.Text = "StudentAssesmentPage";
+            this.Load += new System.EventHandler(this.StudentAssesmentPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assessmentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -215,11 +282,18 @@
 
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2HtmlLabel SearchlabelMain;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2TextBox StAssTExtBox;
+        private Guna.UI2.WinForms.Guna2Button StAssSubmitBtn;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.ComboBox studentDataComboBox;
+        private online_learning_management_system_dbDataSet online_learning_management_system_dbDataSet;
+        private System.Windows.Forms.BindingSource assessmentBindingSource;
+        private online_learning_management_system_dbDataSetTableAdapters.AssessmentTableAdapter assessmentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
     }
 }

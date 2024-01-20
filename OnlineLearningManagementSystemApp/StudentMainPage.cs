@@ -1,5 +1,6 @@
 ﻿using OnlineLearningManagementSystemApp.Business;
 using OnlineLearningManagementSystemApp.Models;
+using OnlineLearningManagementSystemApp.Views;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -14,10 +15,9 @@ using System.Windows.Forms;
 
 namespace OnlineLearningManagementSystemApp
 {
-    public partial class StudentMainPage : Form
+    public partial class StudentMainPage : Form 
     {
         private IStudentBusinessService studentBusinessService;
-
         //
         long exStudentId = 6;
 
@@ -39,10 +39,7 @@ namespace OnlineLearningManagementSystemApp
             // Get the selected string from the ComboBox
             string selectedTableType = studentDataComboBox.SelectedItem.ToString();
 
-            Debug.WriteLine(selectedTableType);
-
-            Debug.WriteLine(studentBusinessService.GetEnrolledCoursesForUser(6));
-
+           
             List<Course> enrolledCourses = studentBusinessService.GetEnrolledCoursesForUser(6);
             List<Course> allCourses = studentBusinessService.GetAllCourses();
             List<Assessment> assessmentofEnrolledCourses = studentBusinessService.GetAssessmentsForEnrolledCourses(6);
