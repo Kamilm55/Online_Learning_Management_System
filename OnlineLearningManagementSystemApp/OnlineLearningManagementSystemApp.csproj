@@ -331,6 +331,7 @@
     <None Include="Properties\DataSources\Guna.UI2.WinForms.GunaUILicenseMgr.datasource" />
     <None Include="Properties\DataSources\Guna.UI2.WinForms.MessageDialog+TextOnButtons.datasource" />
     <None Include="Properties\DataSources\Guna.UI2.WinForms.MessageDialog.datasource" />
+    <None Include="Properties\DataSources\UserDetails.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -359,8 +360,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ModelDetails\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

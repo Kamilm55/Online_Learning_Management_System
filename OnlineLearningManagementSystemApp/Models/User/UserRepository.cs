@@ -1,4 +1,4 @@
-﻿using OnlineLearningManagementSystemApp.ModelDetails;
+﻿using OnlineLearningManagementSystemApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -187,6 +187,7 @@ namespace OnlineLearningManagementSystemApp.Models
                     UserID = result.user.UserID,
                     Username = result.user.Username,
                     Email = result.user.Email,
+                    EnrollmentID = result.enrollment.EnrollmentID, // Include EnrollmentID
                     EnrollmentDate = result.enrollment.EnrollmentDate,
                     CourseTitle = result.course.Title
                 })

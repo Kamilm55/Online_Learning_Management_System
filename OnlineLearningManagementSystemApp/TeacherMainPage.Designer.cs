@@ -29,19 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.logoutBtn = new Guna.UI2.WinForms.Guna2Button();
             this.userProfileLink = new Guna.UI2.WinForms.Guna2Button();
             this.assesmentPageLink = new Guna.UI2.WinForms.Guna2Button();
-            this.studentUnenrollCourseButton = new Guna.UI2.WinForms.Guna2Button();
-            this.studentUnenrollCourseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.deleteCourseButton = new Guna.UI2.WinForms.Guna2Button();
+            this.deleteCourseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -50,7 +49,6 @@
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.teacherDataComboBox = new System.Windows.Forms.ComboBox();
             this.LeaveStudentFromCourseButton = new Guna.UI2.WinForms.Guna2Button();
-            this.studentLeaveCourseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.SearchlabelMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.studentSearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -62,24 +60,26 @@
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            this.MyCoursesSearchTextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.AddCourseBtn = new Guna.UI2.WinForms.Guna2Button();
             this.usersTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.UsersTableAdapter();
             this.courseTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.CourseTableAdapter();
-            this.comboBoxMyCoursesTitle = new System.Windows.Forms.ComboBox();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.comboBoxEnrollmentId = new System.Windows.Forms.ComboBox();
+            this.EnrollmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TeacherMainMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.photoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.enrollmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EditCourseButton = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Button1
@@ -142,40 +142,41 @@
             this.assesmentPageLink.TabIndex = 33;
             this.assesmentPageLink.Text = "Go to Assesments";
             // 
-            // studentUnenrollCourseButton
+            // deleteCourseButton
             // 
-            this.studentUnenrollCourseButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.studentUnenrollCourseButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.studentUnenrollCourseButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.studentUnenrollCourseButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.studentUnenrollCourseButton.FillColor = System.Drawing.Color.IndianRed;
-            this.studentUnenrollCourseButton.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.studentUnenrollCourseButton.ForeColor = System.Drawing.Color.White;
-            this.studentUnenrollCourseButton.Location = new System.Drawing.Point(1040, 639);
-            this.studentUnenrollCourseButton.Name = "studentUnenrollCourseButton";
-            this.studentUnenrollCourseButton.Size = new System.Drawing.Size(85, 45);
-            this.studentUnenrollCourseButton.TabIndex = 32;
-            this.studentUnenrollCourseButton.Text = "guna2Button3";
+            this.deleteCourseButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.deleteCourseButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.deleteCourseButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.deleteCourseButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.deleteCourseButton.FillColor = System.Drawing.Color.IndianRed;
+            this.deleteCourseButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deleteCourseButton.ForeColor = System.Drawing.Color.White;
+            this.deleteCourseButton.Location = new System.Drawing.Point(1028, 639);
+            this.deleteCourseButton.Name = "deleteCourseButton";
+            this.deleteCourseButton.Size = new System.Drawing.Size(85, 45);
+            this.deleteCourseButton.TabIndex = 32;
+            this.deleteCourseButton.Text = "Delete";
+            this.deleteCourseButton.Click += new System.EventHandler(this.deleteCourseButton_Click);
             // 
-            // studentUnenrollCourseTextBox
+            // deleteCourseTextBox
             // 
-            this.studentUnenrollCourseTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.studentUnenrollCourseTextBox.DefaultText = "";
-            this.studentUnenrollCourseTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.studentUnenrollCourseTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.studentUnenrollCourseTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentUnenrollCourseTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentUnenrollCourseTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentUnenrollCourseTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.studentUnenrollCourseTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentUnenrollCourseTextBox.Location = new System.Drawing.Point(778, 639);
-            this.studentUnenrollCourseTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.studentUnenrollCourseTextBox.Name = "studentUnenrollCourseTextBox";
-            this.studentUnenrollCourseTextBox.PasswordChar = '\0';
-            this.studentUnenrollCourseTextBox.PlaceholderText = "Enter course id";
-            this.studentUnenrollCourseTextBox.SelectedText = "";
-            this.studentUnenrollCourseTextBox.Size = new System.Drawing.Size(229, 48);
-            this.studentUnenrollCourseTextBox.TabIndex = 31;
+            this.deleteCourseTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.deleteCourseTextBox.DefaultText = "";
+            this.deleteCourseTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.deleteCourseTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.deleteCourseTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.deleteCourseTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.deleteCourseTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.deleteCourseTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.deleteCourseTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.deleteCourseTextBox.Location = new System.Drawing.Point(778, 639);
+            this.deleteCourseTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.deleteCourseTextBox.Name = "deleteCourseTextBox";
+            this.deleteCourseTextBox.PasswordChar = '\0';
+            this.deleteCourseTextBox.PlaceholderText = "Enter course id";
+            this.deleteCourseTextBox.SelectedText = "";
+            this.deleteCourseTextBox.Size = new System.Drawing.Size(229, 48);
+            this.deleteCourseTextBox.TabIndex = 31;
             // 
             // guna2HtmlLabel3
             // 
@@ -197,37 +198,36 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.guna2DataGridView1.AutoGenerateColumns = false;
             this.guna2DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.guna2DataGridView1.ColumnHeadersHeight = 35;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Delete,
             this.userIDDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.passwordDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn,
-            this.photoDataGridViewImageColumn});
-            this.guna2DataGridView1.DataSource = this.usersBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            this.enrollmentDateDataGridViewTextBoxColumn,
+            this.courseTitleDataGridViewTextBoxColumn,
+            this.EnrollmentID});
+            this.guna2DataGridView1.DataSource = this.userDetailsBindingSource;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(231, 104);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -258,11 +258,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.Height = 24;
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            // 
-            // usersBindingSource
-            // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.online_learning_management_system_dbDataSet;
             // 
             // online_learning_management_system_dbDataSet
             // 
@@ -302,32 +297,12 @@
             this.LeaveStudentFromCourseButton.FillColor = System.Drawing.Color.Green;
             this.LeaveStudentFromCourseButton.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LeaveStudentFromCourseButton.ForeColor = System.Drawing.Color.White;
-            this.LeaveStudentFromCourseButton.Location = new System.Drawing.Point(807, 331);
+            this.LeaveStudentFromCourseButton.Location = new System.Drawing.Point(794, 321);
             this.LeaveStudentFromCourseButton.Name = "LeaveStudentFromCourseButton";
             this.LeaveStudentFromCourseButton.Size = new System.Drawing.Size(180, 45);
             this.LeaveStudentFromCourseButton.TabIndex = 25;
             this.LeaveStudentFromCourseButton.Text = "guna2Button1";
             this.LeaveStudentFromCourseButton.Click += new System.EventHandler(this.LeaveStudentFromCourseButton_Click);
-            // 
-            // studentLeaveCourseTextBox
-            // 
-            this.studentLeaveCourseTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.studentLeaveCourseTextBox.DefaultText = "";
-            this.studentLeaveCourseTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.studentLeaveCourseTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.studentLeaveCourseTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentLeaveCourseTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentLeaveCourseTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentLeaveCourseTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.studentLeaveCourseTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentLeaveCourseTextBox.Location = new System.Drawing.Point(778, 266);
-            this.studentLeaveCourseTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.studentLeaveCourseTextBox.Name = "studentLeaveCourseTextBox";
-            this.studentLeaveCourseTextBox.PasswordChar = '\0';
-            this.studentLeaveCourseTextBox.PlaceholderText = "Enter course id";
-            this.studentLeaveCourseTextBox.SelectedText = "";
-            this.studentLeaveCourseTextBox.Size = new System.Drawing.Size(229, 48);
-            this.studentLeaveCourseTextBox.TabIndex = 24;
             // 
             // guna2HtmlLabel2
             // 
@@ -370,18 +345,18 @@
             // 
             // guna2DataGridView2
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
-            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(229)))), ((int)(((byte)(251)))));
+            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.guna2DataGridView2.AutoGenerateColumns = false;
             this.guna2DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.guna2DataGridView2.ColumnHeadersHeight = 35;
             this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -389,14 +364,14 @@
             this.titleDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn});
             this.guna2DataGridView2.DataSource = this.courseBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(237)))), ((int)(((byte)(252)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle12;
             this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(230)))), ((int)(((byte)(251)))));
             this.guna2DataGridView2.Location = new System.Drawing.Point(231, 422);
             this.guna2DataGridView2.Name = "guna2DataGridView2";
@@ -484,60 +459,44 @@
             this.guna2HtmlLabel8.TabIndex = 42;
             this.guna2HtmlLabel8.Text = "Search";
             // 
-            // guna2TextBox1
+            // MyCoursesSearchTextBox1
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(827, 444);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(245, 36);
-            this.guna2TextBox1.TabIndex = 41;
+            this.MyCoursesSearchTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.MyCoursesSearchTextBox1.DefaultText = "";
+            this.MyCoursesSearchTextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.MyCoursesSearchTextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.MyCoursesSearchTextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.MyCoursesSearchTextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.MyCoursesSearchTextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.MyCoursesSearchTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MyCoursesSearchTextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.MyCoursesSearchTextBox1.Location = new System.Drawing.Point(827, 444);
+            this.MyCoursesSearchTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MyCoursesSearchTextBox1.Name = "MyCoursesSearchTextBox1";
+            this.MyCoursesSearchTextBox1.PasswordChar = '\0';
+            this.MyCoursesSearchTextBox1.PlaceholderText = "";
+            this.MyCoursesSearchTextBox1.SelectedText = "";
+            this.MyCoursesSearchTextBox1.Size = new System.Drawing.Size(245, 36);
+            this.MyCoursesSearchTextBox1.TabIndex = 41;
+            this.MyCoursesSearchTextBox1.TextChanged += new System.EventHandler(this.MyCoursesSearchTextBox1_TextChanged);
             // 
-            // guna2Button2
+            // AddCourseBtn
             // 
-            this.guna2Button2.AutoRoundedCorners = true;
-            this.guna2Button2.BorderRadius = 21;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.FillColor = System.Drawing.Color.Green;
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Location = new System.Drawing.Point(800, 501);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(252, 45);
-            this.guna2Button2.TabIndex = 45;
-            this.guna2Button2.Text = "Add Course";
-            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
-            // 
-            // guna2Button3
-            // 
-            this.guna2Button3.AutoRoundedCorners = true;
-            this.guna2Button3.BorderRadius = 21;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.Green;
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Location = new System.Drawing.Point(800, 562);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(252, 45);
-            this.guna2Button3.TabIndex = 46;
-            this.guna2Button3.Text = "Edit Course";
+            this.AddCourseBtn.AutoRoundedCorners = true;
+            this.AddCourseBtn.BorderRadius = 21;
+            this.AddCourseBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.AddCourseBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.AddCourseBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.AddCourseBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.AddCourseBtn.FillColor = System.Drawing.Color.Green;
+            this.AddCourseBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.AddCourseBtn.ForeColor = System.Drawing.Color.White;
+            this.AddCourseBtn.Location = new System.Drawing.Point(800, 501);
+            this.AddCourseBtn.Name = "AddCourseBtn";
+            this.AddCourseBtn.Size = new System.Drawing.Size(252, 45);
+            this.AddCourseBtn.TabIndex = 45;
+            this.AddCourseBtn.Text = "Add Course";
+            this.AddCourseBtn.Click += new System.EventHandler(this.AddCourseBtn_Click);
             // 
             // usersTableAdapter
             // 
@@ -547,27 +506,33 @@
             // 
             this.courseTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBoxMyCoursesTitle
+            // comboBoxEnrollmentId
             // 
-            this.comboBoxMyCoursesTitle.DisplayMember = "All Courses";
-            this.comboBoxMyCoursesTitle.FormattingEnabled = true;
-            this.comboBoxMyCoursesTitle.Items.AddRange(new object[] {
+            this.comboBoxEnrollmentId.DisplayMember = "All Courses";
+            this.comboBoxEnrollmentId.FormattingEnabled = true;
+            this.comboBoxEnrollmentId.Items.AddRange(new object[] {
             "My Students"});
-            this.comboBoxMyCoursesTitle.Location = new System.Drawing.Point(778, 200);
-            this.comboBoxMyCoursesTitle.Name = "comboBoxMyCoursesTitle";
-            this.comboBoxMyCoursesTitle.Size = new System.Drawing.Size(236, 24);
-            this.comboBoxMyCoursesTitle.TabIndex = 47;
+            this.comboBoxEnrollmentId.Location = new System.Drawing.Point(778, 277);
+            this.comboBoxEnrollmentId.Name = "comboBoxEnrollmentId";
+            this.comboBoxEnrollmentId.Size = new System.Drawing.Size(236, 24);
+            this.comboBoxEnrollmentId.TabIndex = 47;
             // 
-            // Delete
+            // EnrollmentID
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.MinimumWidth = 6;
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
+            this.EnrollmentID.DataPropertyName = "EnrollmentID";
+            this.EnrollmentID.HeaderText = "EnrollmentID";
+            this.EnrollmentID.MinimumWidth = 6;
+            this.EnrollmentID.Name = "EnrollmentID";
+            this.EnrollmentID.ReadOnly = true;
+            // 
+            // TeacherMainMessageDialog
+            // 
+            this.TeacherMainMessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.TeacherMainMessageDialog.Caption = null;
+            this.TeacherMainMessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.TeacherMainMessageDialog.Parent = this;
+            this.TeacherMainMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.TeacherMainMessageDialog.Text = null;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -575,7 +540,6 @@
             this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
             this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -591,37 +555,52 @@
             this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             // 
-            // passwordDataGridViewTextBoxColumn
+            // enrollmentDateDataGridViewTextBoxColumn
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.enrollmentDateDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentDate";
+            this.enrollmentDateDataGridViewTextBoxColumn.HeaderText = "EnrollmentDate";
+            this.enrollmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.enrollmentDateDataGridViewTextBoxColumn.Name = "enrollmentDateDataGridViewTextBoxColumn";
             // 
-            // roleDataGridViewTextBoxColumn
+            // courseTitleDataGridViewTextBoxColumn
             // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.courseTitleDataGridViewTextBoxColumn.DataPropertyName = "CourseTitle";
+            this.courseTitleDataGridViewTextBoxColumn.HeaderText = "CourseTitle";
+            this.courseTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseTitleDataGridViewTextBoxColumn.Name = "courseTitleDataGridViewTextBoxColumn";
             // 
-            // photoDataGridViewImageColumn
+            // userDetailsBindingSource
             // 
-            this.photoDataGridViewImageColumn.DataPropertyName = "Photo";
-            this.photoDataGridViewImageColumn.HeaderText = "Photo";
-            this.photoDataGridViewImageColumn.MinimumWidth = 6;
-            this.photoDataGridViewImageColumn.Name = "photoDataGridViewImageColumn";
+            this.userDetailsBindingSource.DataSource = typeof(OnlineLearningManagementSystemApp.UserDetails);
+            // 
+            // EditCourseButton
+            // 
+            this.EditCourseButton.AutoRoundedCorners = true;
+            this.EditCourseButton.BorderRadius = 21;
+            this.EditCourseButton.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditCourseButton.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditCourseButton.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditCourseButton.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditCourseButton.FillColor = System.Drawing.Color.Green;
+            this.EditCourseButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditCourseButton.ForeColor = System.Drawing.Color.White;
+            this.EditCourseButton.Location = new System.Drawing.Point(800, 562);
+            this.EditCourseButton.Name = "EditCourseButton";
+            this.EditCourseButton.Size = new System.Drawing.Size(252, 45);
+            this.EditCourseButton.TabIndex = 46;
+            this.EditCourseButton.Text = "Edit Course";
+            this.EditCourseButton.Click += new System.EventHandler(this.EditCourseButton_Click);
             // 
             // TeacherMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 748);
-            this.Controls.Add(this.comboBoxMyCoursesTitle);
-            this.Controls.Add(this.guna2Button3);
-            this.Controls.Add(this.guna2Button2);
+            this.Controls.Add(this.comboBoxEnrollmentId);
+            this.Controls.Add(this.EditCourseButton);
+            this.Controls.Add(this.AddCourseBtn);
             this.Controls.Add(this.guna2HtmlLabel8);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.MyCoursesSearchTextBox1);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2DataGridView2);
@@ -629,15 +608,14 @@
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.userProfileLink);
             this.Controls.Add(this.assesmentPageLink);
-            this.Controls.Add(this.studentUnenrollCourseButton);
-            this.Controls.Add(this.studentUnenrollCourseTextBox);
+            this.Controls.Add(this.deleteCourseButton);
+            this.Controls.Add(this.deleteCourseTextBox);
             this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2DataGridView1);
             this.Controls.Add(this.guna2HtmlLabel4);
             this.Controls.Add(this.teacherDataComboBox);
             this.Controls.Add(this.LeaveStudentFromCourseButton);
-            this.Controls.Add(this.studentLeaveCourseTextBox);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.SearchlabelMain);
             this.Controls.Add(this.studentSearchTextBox);
@@ -649,6 +627,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -660,15 +639,14 @@
         private Guna.UI2.WinForms.Guna2Button logoutBtn;
         private Guna.UI2.WinForms.Guna2Button userProfileLink;
         private Guna.UI2.WinForms.Guna2Button assesmentPageLink;
-        private Guna.UI2.WinForms.Guna2Button studentUnenrollCourseButton;
-        private Guna.UI2.WinForms.Guna2TextBox studentUnenrollCourseTextBox;
+        private Guna.UI2.WinForms.Guna2Button deleteCourseButton;
+        private Guna.UI2.WinForms.Guna2TextBox deleteCourseTextBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private System.Windows.Forms.ComboBox teacherDataComboBox;
         private Guna.UI2.WinForms.Guna2Button LeaveStudentFromCourseButton;
-        private Guna.UI2.WinForms.Guna2TextBox studentLeaveCourseTextBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel SearchlabelMain;
         private Guna.UI2.WinForms.Guna2TextBox studentSearchTextBox;
@@ -676,9 +654,8 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel8;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2TextBox MyCoursesSearchTextBox1;
+        private Guna.UI2.WinForms.Guna2Button AddCourseBtn;
         private online_learning_management_system_dbDataSet online_learning_management_system_dbDataSet;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private online_learning_management_system_dbDataSetTableAdapters.UsersTableAdapter usersTableAdapter;
@@ -687,13 +664,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBoxMyCoursesTitle;
-        private System.Windows.Forms.DataGridViewButtonColumn Delete;
+        private System.Windows.Forms.ComboBox comboBoxEnrollmentId;
+        private System.Windows.Forms.BindingSource userDetailsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn photoDataGridViewImageColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn enrollmentDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnrollmentID;
+        private Guna.UI2.WinForms.Guna2MessageDialog TeacherMainMessageDialog;
+        private Guna.UI2.WinForms.Guna2Button EditCourseButton;
     }
 }

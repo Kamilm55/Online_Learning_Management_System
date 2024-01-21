@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineLearningManagementSystemApp.Models
+namespace OnlineLearningManagementSystemApp
     {
         public interface IUserRepository
-        { 
+        {
             User GetById(long id);
             User GetByUserName(string userName);
             User GetByEmail(string email);

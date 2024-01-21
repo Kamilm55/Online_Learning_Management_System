@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnlineLearningManagementSystemApp.Models.User
+namespace OnlineLearningManagementSystemApp
 {
     public class UserDetails
     {
@@ -13,5 +13,6 @@ namespace OnlineLearningManagementSystemApp.Models.User
         public string Email { get; set; }
         public DateTime EnrollmentDate { get; set; }
         public string CourseTitle { get; set; }
+        public long EnrollmentID { get; set; }
     }
 }
