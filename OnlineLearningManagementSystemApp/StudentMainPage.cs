@@ -50,6 +50,7 @@ namespace OnlineLearningManagementSystemApp
             }
         }
 
+
         private void CourseSearchTextBox_TextChanged(object sender, EventArgs e)
         {
             string filterText = CourseSearchTextBox.Text.Trim().ToLower();
@@ -181,6 +182,21 @@ namespace OnlineLearningManagementSystemApp
         private void studentUnenrollCourseButton_Click(object sender, EventArgs e)
         {
             studentEnrollOrUnenrollCourseButton_Click(sender, e, false);
+        }
+
+
+        //
+        private void assesmentPageLink_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToStudentAssessmentPage(this, exStudentId);
+        }
+        private void userProfileLink_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToUserProfile(this, exStudentId);
+        }
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.Logout(this);
         }
         //
         public void ShowInformation(string message, string caption = "Information")

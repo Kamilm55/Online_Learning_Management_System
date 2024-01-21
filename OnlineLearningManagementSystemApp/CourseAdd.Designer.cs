@@ -64,18 +64,22 @@
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new System.Drawing.Point(273, 185);
+            titleLabel.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            titleLabel.Location = new System.Drawing.Point(231, 105);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new System.Drawing.Size(36, 16);
+            titleLabel.Size = new System.Drawing.Size(69, 20);
             titleLabel.TabIndex = 3;
             titleLabel.Text = "Title:";
             // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(250, 259);
+            descriptionLabel.Font = new System.Drawing.Font("Monospac821 BT", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descriptionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            descriptionLabel.Location = new System.Drawing.Point(231, 203);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(78, 16);
+            descriptionLabel.Size = new System.Drawing.Size(129, 20);
             descriptionLabel.TabIndex = 5;
             descriptionLabel.Text = "Description:";
             // 
@@ -130,7 +134,7 @@
             this.courseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.courseBindingNavigator.Name = "courseBindingNavigator";
             this.courseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.courseBindingNavigator.Size = new System.Drawing.Size(933, 31);
+            this.courseBindingNavigator.Size = new System.Drawing.Size(761, 27);
             this.courseBindingNavigator.TabIndex = 0;
             this.courseBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -140,7 +144,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
@@ -240,7 +244,7 @@
             this.CourseAddSubmitBtn.FillColor = System.Drawing.Color.Green;
             this.CourseAddSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CourseAddSubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.CourseAddSubmitBtn.Location = new System.Drawing.Point(358, 325);
+            this.CourseAddSubmitBtn.Location = new System.Drawing.Point(235, 309);
             this.CourseAddSubmitBtn.Name = "CourseAddSubmitBtn";
             this.CourseAddSubmitBtn.Size = new System.Drawing.Size(244, 45);
             this.CourseAddSubmitBtn.TabIndex = 46;
@@ -261,7 +265,7 @@
             this.CourseAddTitleTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CourseAddTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.CourseAddTitleTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CourseAddTitleTextBox.Location = new System.Drawing.Point(345, 166);
+            this.CourseAddTitleTextBox.Location = new System.Drawing.Point(223, 138);
             this.CourseAddTitleTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseAddTitleTextBox.Name = "CourseAddTitleTextBox";
             this.CourseAddTitleTextBox.PasswordChar = '\0';
@@ -293,7 +297,7 @@
             this.CourseAddDescTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CourseAddDescTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.CourseAddDescTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CourseAddDescTextBox.Location = new System.Drawing.Point(345, 244);
+            this.CourseAddDescTextBox.Location = new System.Drawing.Point(223, 238);
             this.CourseAddDescTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseAddDescTextBox.Name = "CourseAddDescTextBox";
             this.CourseAddDescTextBox.PasswordChar = '\0';
@@ -306,7 +310,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 598);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(97)))), ((int)(((byte)(155)))));
+            this.ClientSize = new System.Drawing.Size(761, 464);
             this.Controls.Add(this.CourseAddDescTextBox);
             this.Controls.Add(this.CourseAddTitleTextBox);
             this.Controls.Add(this.CourseAddSubmitBtn);
@@ -314,6 +319,7 @@
             this.Controls.Add(descriptionLabel);
             this.Controls.Add(this.courseBindingNavigator);
             this.Name = "CourseAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CoursesCRUD";
             this.Load += new System.EventHandler(this.CoursesCRUD_Load);
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();

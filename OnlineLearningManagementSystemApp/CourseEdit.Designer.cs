@@ -45,27 +45,33 @@
             // titleLabel
             // 
             titleLabel.AutoSize = true;
-            titleLabel.Location = new System.Drawing.Point(147, 135);
+            titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            titleLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            titleLabel.Location = new System.Drawing.Point(215, 148);
             titleLabel.Name = "titleLabel";
-            titleLabel.Size = new System.Drawing.Size(36, 16);
+            titleLabel.Size = new System.Drawing.Size(46, 20);
             titleLabel.TabIndex = 56;
             titleLabel.Text = "Title:";
             // 
             // descriptionLabel
             // 
             descriptionLabel.AutoSize = true;
-            descriptionLabel.Location = new System.Drawing.Point(124, 209);
+            descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descriptionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            descriptionLabel.Location = new System.Drawing.Point(215, 251);
             descriptionLabel.Name = "descriptionLabel";
-            descriptionLabel.Size = new System.Drawing.Size(78, 16);
+            descriptionLabel.Size = new System.Drawing.Size(100, 20);
             descriptionLabel.TabIndex = 57;
             descriptionLabel.Text = "Description:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(135, 71);
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            label1.Location = new System.Drawing.Point(215, 43);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(67, 16);
+            label1.Size = new System.Drawing.Size(86, 20);
             label1.TabIndex = 62;
             label1.Text = "Course id:";
             // 
@@ -83,7 +89,7 @@
             this.CourseEditTitleTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CourseEditTitleTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.CourseEditTitleTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CourseEditTitleTextBox.Location = new System.Drawing.Point(219, 116);
+            this.CourseEditTitleTextBox.Location = new System.Drawing.Point(210, 184);
             this.CourseEditTitleTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseEditTitleTextBox.Name = "CourseEditTitleTextBox";
             this.CourseEditTitleTextBox.PasswordChar = '\0';
@@ -101,7 +107,7 @@
             this.CourseEditDescBtn.FillColor = System.Drawing.Color.Green;
             this.CourseEditDescBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CourseEditDescBtn.ForeColor = System.Drawing.Color.White;
-            this.CourseEditDescBtn.Location = new System.Drawing.Point(534, 192);
+            this.CourseEditDescBtn.Location = new System.Drawing.Point(525, 285);
             this.CourseEditDescBtn.Name = "CourseEditDescBtn";
             this.CourseEditDescBtn.Size = new System.Drawing.Size(128, 53);
             this.CourseEditDescBtn.TabIndex = 61;
@@ -117,7 +123,7 @@
             this.CourseEditTitleBtn.FillColor = System.Drawing.Color.Green;
             this.CourseEditTitleBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.CourseEditTitleBtn.ForeColor = System.Drawing.Color.White;
-            this.CourseEditTitleBtn.Location = new System.Drawing.Point(534, 116);
+            this.CourseEditTitleBtn.Location = new System.Drawing.Point(525, 184);
             this.CourseEditTitleBtn.Name = "CourseEditTitleBtn";
             this.CourseEditTitleBtn.Size = new System.Drawing.Size(128, 53);
             this.CourseEditTitleBtn.TabIndex = 60;
@@ -143,7 +149,7 @@
             this.courseIdComboBox.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.courseIdComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.courseIdComboBox.ItemHeight = 30;
-            this.courseIdComboBox.Location = new System.Drawing.Point(219, 61);
+            this.courseIdComboBox.Location = new System.Drawing.Point(210, 75);
             this.courseIdComboBox.Name = "courseIdComboBox";
             this.courseIdComboBox.Size = new System.Drawing.Size(287, 36);
             this.courseIdComboBox.TabIndex = 63;
@@ -163,7 +169,7 @@
             this.CourseEditDescTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CourseEditDescTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.CourseEditDescTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CourseEditDescTextBox.Location = new System.Drawing.Point(219, 192);
+            this.CourseEditDescTextBox.Location = new System.Drawing.Point(210, 285);
             this.CourseEditDescTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseEditDescTextBox.Name = "CourseEditDescTextBox";
             this.CourseEditDescTextBox.PasswordChar = '\0';
@@ -176,7 +182,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(97)))), ((int)(((byte)(155)))));
+            this.ClientSize = new System.Drawing.Size(761, 464);
             this.Controls.Add(this.CourseEditDescTextBox);
             this.Controls.Add(this.courseIdComboBox);
             this.Controls.Add(label1);
@@ -186,6 +193,7 @@
             this.Controls.Add(titleLabel);
             this.Controls.Add(descriptionLabel);
             this.Name = "CourseEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CourseEdit";
             this.ResumeLayout(false);
             this.PerformLayout();

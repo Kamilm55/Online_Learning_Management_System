@@ -70,6 +70,8 @@ namespace OnlineLearningManagementSystemApp.Business
                 userRepository.Add(user);
                 // If the registration is successful, show a message to the user
                 view.ShowInformation("Registration is successful. You can sign in now!");
+                // Clear the textboxes after registration
+                view.ClearTextboxes();
             }
             catch (InvalidOperationException ex)
             {

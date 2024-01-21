@@ -176,6 +176,7 @@
     </Compile>
     <Compile Include="Utils\AuthUtils.cs" />
     <Compile Include="Utils\MessageBoxUtils.cs" />
+    <Compile Include="Utils\NavigationUtils.cs" />
     <Compile Include="Views\IAuthView.cs" />
     <Compile Include="Views\ILoginView.cs" />
     <Compile Include="Views\IRegisterView.cs" />

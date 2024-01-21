@@ -120,6 +120,7 @@ namespace OnlineLearningManagementSystemApp
 
         private void LeaveStudentFromCourseButton_Click(object sender, EventArgs e)
         {
+
             // Get the selected enrollment ID from the ComboBox
             if (comboBoxEnrollmentId.SelectedItem != null && long.TryParse(comboBoxEnrollmentId.SelectedItem.ToString(), out long enrollmentId))
             {
@@ -136,6 +137,7 @@ namespace OnlineLearningManagementSystemApp
 
                     // Use your custom ShowInformation method for success
                     ShowInformation("Successfully left the course.");
+                    LoadEnrollmentIds(userDetails);
                 }
                 catch (Exception ex)
                 {
@@ -230,6 +232,10 @@ namespace OnlineLearningManagementSystemApp
                
             }
         }
+        public void Close()
+        {
+            this.Hide();
+        }
 
         private void CourseEditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -297,6 +303,19 @@ namespace OnlineLearningManagementSystemApp
 
         }
 
-       
+        private void userProfileLink_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToUserProfile(this, teacherId);
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.Logout(this);
+        }
+
+        private void comboBoxEnrollmentId_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

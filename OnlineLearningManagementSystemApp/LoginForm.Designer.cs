@@ -33,7 +33,7 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.loginSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.loginPasswordTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.loginEmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.loginEmailTextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.linkToRegister = new System.Windows.Forms.LinkLabel();
             this.guna2MessageDialogLogin = new Guna.UI2.WinForms.Guna2MessageDialog();
@@ -49,7 +49,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.guna2HtmlLabel1);
             this.guna2ShadowPanel1.Controls.Add(this.loginSubmitBtn);
             this.guna2ShadowPanel1.Controls.Add(this.loginPasswordTextBox);
-            this.guna2ShadowPanel1.Controls.Add(this.loginEmailTextBox);
+            this.guna2ShadowPanel1.Controls.Add(this.loginEmailTextBox1);
             this.guna2ShadowPanel1.Controls.Add(this.guna2PictureBox1);
             this.guna2ShadowPanel1.Controls.Add(this.linkToRegister);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
@@ -111,28 +111,28 @@
             this.loginPasswordTextBox.TabIndex = 12;
             this.loginPasswordTextBox.UseSystemPasswordChar = true;
             // 
-            // loginEmailTextBox
+            // loginEmailTextBox1
             // 
-            this.loginEmailTextBox.BackColor = System.Drawing.Color.Transparent;
-            this.loginEmailTextBox.BorderColor = System.Drawing.Color.DarkGray;
-            this.loginEmailTextBox.BorderRadius = 6;
-            this.loginEmailTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.loginEmailTextBox.DefaultText = "";
-            this.loginEmailTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.loginEmailTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.loginEmailTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.loginEmailTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.loginEmailTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loginEmailTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
-            this.loginEmailTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.loginEmailTextBox.Location = new System.Drawing.Point(636, 158);
-            this.loginEmailTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.loginEmailTextBox.Name = "loginEmailTextBox";
-            this.loginEmailTextBox.PasswordChar = '\0';
-            this.loginEmailTextBox.PlaceholderText = "Enter your email";
-            this.loginEmailTextBox.SelectedText = "";
-            this.loginEmailTextBox.Size = new System.Drawing.Size(287, 53);
-            this.loginEmailTextBox.TabIndex = 11;
+            this.loginEmailTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.loginEmailTextBox1.BorderColor = System.Drawing.Color.DarkGray;
+            this.loginEmailTextBox1.BorderRadius = 6;
+            this.loginEmailTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.loginEmailTextBox1.DefaultText = "";
+            this.loginEmailTextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.loginEmailTextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.loginEmailTextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.loginEmailTextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.loginEmailTextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loginEmailTextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F);
+            this.loginEmailTextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.loginEmailTextBox1.Location = new System.Drawing.Point(636, 158);
+            this.loginEmailTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.loginEmailTextBox1.Name = "loginEmailTextBox1";
+            this.loginEmailTextBox1.PasswordChar = '\0';
+            this.loginEmailTextBox1.PlaceholderText = "Enter your email";
+            this.loginEmailTextBox1.SelectedText = "";
+            this.loginEmailTextBox1.Size = new System.Drawing.Size(287, 53);
+            this.loginEmailTextBox1.TabIndex = 11;
             // 
             // guna2PictureBox1
             // 
@@ -193,7 +193,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2Button loginSubmitBtn;
         private Guna.UI2.WinForms.Guna2TextBox loginPasswordTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox loginEmailTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox loginEmailTextBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private System.Windows.Forms.LinkLabel linkToRegister;
         private Guna.UI2.WinForms.Guna2MessageDialog guna2MessageDialogLogin;

@@ -37,12 +37,10 @@ namespace OnlineLearningManagementSystemApp
 
         private void loginSubmitBtn_Click(object sender, EventArgs e)
         {
-            Email = loginEmailTextBox.Text;
+            Email = loginEmailTextBox1.Text;
             Password = loginPasswordTextBox.Text;
             // Notify the presenter that login button is clicked
             LoginButtonClicked?.Invoke(this, EventArgs.Empty);
-
-            
         }
 
        
@@ -83,7 +81,7 @@ namespace OnlineLearningManagementSystemApp
 
         public void ClearTextboxes()
         {
-            loginEmailTextBox.Text = string.Empty;
+            loginEmailTextBox1.Text = string.Empty;
             loginPasswordTextBox.Text = string.Empty;
         }
     }

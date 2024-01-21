@@ -3,6 +3,7 @@ using OnlineLearningManagementSystemApp.Business;
 using OnlineLearningManagementSystemApp.Models;
 using OnlineLearningManagementSystemApp.Models.Assesment;
 using OnlineLearningManagementSystemApp.Presenters;
+using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
 using System;
 using System.Collections.Generic;
@@ -91,6 +92,22 @@ namespace OnlineLearningManagementSystemApp
         public void BindAssessments(List<Assessment> assessments)
         {
             assessmentBindingSource.DataSource = assessments;
+        }
+        //
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToStudentMainPage(this, exStudentId);
+        }
+
+        private void userProfileLink_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToUserProfile(this,exStudentId);
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.Logout(this);
         }
     }
 }

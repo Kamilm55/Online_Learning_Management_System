@@ -37,8 +37,6 @@ namespace OnlineLearningManagementSystemApp
             // Notify the presenter that register button is clicked
             RegisterButtonClicked?.Invoke(this, EventArgs.Empty);
 
-            // Clear the textboxes after registration
-            ClearTextboxes();
         }
 
         private void linkToLogin_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)

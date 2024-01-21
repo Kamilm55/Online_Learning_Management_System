@@ -28,6 +28,8 @@ namespace OnlineLearningManagementSystemApp
             this.usersTableAdapter.Fill(this.online_learning_management_system_dbDataSet.Users);
 
             User user = userRepository.GetById(userId);
+            if (user.Role.Equals("Teacher"))
+                assesmentPageLink.Enabled = false;
 
             UserPrUsernameLabel.Text = user.Username;
             UserPrEmailLabel.Text = user.Email;
@@ -84,6 +86,26 @@ namespace OnlineLearningManagementSystemApp
         public void ShowError(string message, string caption = "Error")
         {
             GunaMessageDialogUtils.PrepareShowError(UserMsgDialog, message, caption);
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            User user = userRepository.GetById(userId);
+
+            if (user.Role.Equals("Teacher"))
+                NavigationUtils.NavigateToTeacherMainPage(this,userId);
+            else
+                NavigationUtils.NavigateToStudentMainPage(this, userId);
+        }
+
+        private void assesmentPageLink_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.NavigateToStudentAssessmentPage(this, userId);
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            NavigationUtils.Logout(this);
         }
     }
 }
