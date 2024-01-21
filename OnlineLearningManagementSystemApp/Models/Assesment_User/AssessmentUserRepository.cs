@@ -72,35 +72,6 @@ namespace OnlineLearningManagementSystemApp.Models
 
         }
 
-        public List<AssessmentUserDetails> GetAssessmentUserDetails(long instructorId)
-        {
-            var details = dbEntities.Assessment_User
-                .Join(dbEntities.Assessments,
-                      assessmentUser => assessmentUser.AssessmentID,
-                      assessment => assessment.AssessmentID,
-                      (assessmentUser, assessment) => new { assessmentUser, assessment })
-                .Join(dbEntities.Users,
-                      combined => combined.assessmentUser.UserID,
-                      user => user.UserID,
-                      (combined, user) => new { combined.assessmentUser, combined.assessment, user })
-                .Join(dbEntities.Courses,
-                      combined => combined.assessment.CourseID,
-                      course => course.CourseID,
-                      (combined, course) => new AssessmentUserDetails
-                      {
-                          AssessmentUserID = combined.assessmentUser.AssessmentUserID,
-                          AssessmentTitle = combined.assessment.Title,
-                          CourseTitle = course.Title,
-                          Username = combined.user.Username,
-                          Grade = combined.assessmentUser.Grade,
-                          DueDate = combined.assessment.DueDate,
-                      })
-                .Where(detail => detail.InstructorId == instructorId) // Add the condition here
-                .ToList();
-
-            return details;
-        }
-
 
     }
 }

@@ -53,7 +53,25 @@ namespace OnlineLearningManagementSystemApp.Presenters
                 // Show a message to the user for successful login
                 view.ShowInformation($"Login successful. Welcome to Online Learning Management System, {userFromDb.Username}!");
             }
+            // Clear the textboxes after login
+            view.ClearTextboxes();
             // implement role based auth
+
+            if (user.Role.Equals("Student"))
+            {
+                // Create and show the StudentMainPage form
+                StudentMainPage studentMainPage = new StudentMainPage(user.UserID);
+                view.Close();
+                studentMainPage.ShowDialog(); // Use ShowDialog if you want to block interaction with the parent form
+            }
+            else if (user.Role.Equals("Teacher"))
+            {
+                // Create and show the TeacherMainPage form
+                TeacherMainPage teacherMainPage = new TeacherMainPage(user.UserID);
+                //view.Close();
+                teacherMainPage.ShowDialog(); // Use ShowDialog if you want to block interaction with the parent form
+            }
+
 
         }
 

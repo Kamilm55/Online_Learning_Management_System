@@ -39,6 +39,7 @@
             this.UserPrUsernameLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.UserPrPasswordLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.UserPrEmailLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.UserMsgDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             usernameLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
@@ -135,6 +136,15 @@
             this.UserPrEmailLabel.TabIndex = 50;
             this.UserPrEmailLabel.Text = "Email";
             // 
+            // UserMsgDialog
+            // 
+            this.UserMsgDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.UserMsgDialog.Caption = null;
+            this.UserMsgDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.UserMsgDialog.Parent = this;
+            this.UserMsgDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.UserMsgDialog.Text = null;
+            // 
             // UserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -166,5 +176,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel UserPrUsernameLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel UserPrPasswordLabel;
         private Guna.UI2.WinForms.Guna2HtmlLabel UserPrEmailLabel;
+        private Guna.UI2.WinForms.Guna2MessageDialog UserMsgDialog;
     }
 }

@@ -32,7 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.studentSearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CourseSearchTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.SearchlabelMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.studentEnrollCourseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -55,31 +55,32 @@
             this.userProfileLink = new Guna.UI2.WinForms.Guna2Button();
             this.logoutBtn = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.StMainPageMessageDialog1 = new Guna.UI2.WinForms.Guna2MessageDialog();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // studentSearchTextBox
+            // CourseSearchTextBox
             // 
-            this.studentSearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.studentSearchTextBox.DefaultText = "";
-            this.studentSearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.studentSearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.studentSearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentSearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.studentSearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentSearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.studentSearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.studentSearchTextBox.Location = new System.Drawing.Point(105, 115);
-            this.studentSearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.studentSearchTextBox.Name = "studentSearchTextBox";
-            this.studentSearchTextBox.PasswordChar = '\0';
-            this.studentSearchTextBox.PlaceholderText = "";
-            this.studentSearchTextBox.SelectedText = "";
-            this.studentSearchTextBox.Size = new System.Drawing.Size(245, 36);
-            this.studentSearchTextBox.TabIndex = 2;
-            this.studentSearchTextBox.TextChanged += new System.EventHandler(this.studentSearchTextBox_TextChanged);
+            this.CourseSearchTextBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.CourseSearchTextBox.DefaultText = "";
+            this.CourseSearchTextBox.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.CourseSearchTextBox.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.CourseSearchTextBox.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CourseSearchTextBox.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.CourseSearchTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CourseSearchTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CourseSearchTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CourseSearchTextBox.Location = new System.Drawing.Point(105, 115);
+            this.CourseSearchTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CourseSearchTextBox.Name = "CourseSearchTextBox";
+            this.CourseSearchTextBox.PasswordChar = '\0';
+            this.CourseSearchTextBox.PlaceholderText = "";
+            this.CourseSearchTextBox.SelectedText = "";
+            this.CourseSearchTextBox.Size = new System.Drawing.Size(245, 36);
+            this.CourseSearchTextBox.TabIndex = 2;
+            this.CourseSearchTextBox.TextChanged += new System.EventHandler(this.CourseSearchTextBox_TextChanged);
             // 
             // SearchlabelMain
             // 
@@ -377,6 +378,15 @@
             this.guna2Button1.TabIndex = 20;
             this.guna2Button1.Text = "Main Page";
             // 
+            // StMainPageMessageDialog1
+            // 
+            this.StMainPageMessageDialog1.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.StMainPageMessageDialog1.Caption = null;
+            this.StMainPageMessageDialog1.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.StMainPageMessageDialog1.Parent = this;
+            this.StMainPageMessageDialog1.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.StMainPageMessageDialog1.Text = null;
+            // 
             // StudentMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -397,7 +407,7 @@
             this.Controls.Add(this.studentEnrollCourseTextBox);
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Controls.Add(this.SearchlabelMain);
-            this.Controls.Add(this.studentSearchTextBox);
+            this.Controls.Add(this.CourseSearchTextBox);
             this.Name = "StudentMainPage";
             this.Text = "MainPage";
             this.Load += new System.EventHandler(this.MainPage_Load);
@@ -410,7 +420,7 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2TextBox studentSearchTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox CourseSearchTextBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel SearchlabelMain;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox studentEnrollCourseTextBox;
@@ -433,5 +443,6 @@
         private Guna.UI2.WinForms.Guna2Button userProfileLink;
         private Guna.UI2.WinForms.Guna2Button logoutBtn;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2MessageDialog StMainPageMessageDialog1;
     }
 }

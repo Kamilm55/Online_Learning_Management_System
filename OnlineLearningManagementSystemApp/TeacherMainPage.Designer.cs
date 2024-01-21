@@ -38,19 +38,12 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.logoutBtn = new Guna.UI2.WinForms.Guna2Button();
             this.userProfileLink = new Guna.UI2.WinForms.Guna2Button();
-            this.assesmentPageLink = new Guna.UI2.WinForms.Guna2Button();
             this.deleteCourseButton = new Guna.UI2.WinForms.Guna2Button();
             this.deleteCourseTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.enrollmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.courseTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EnrollmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.online_learning_management_system_dbDataSet = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSet();
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -74,12 +67,18 @@
             this.comboBoxEnrollmentId = new System.Windows.Forms.ComboBox();
             this.TeacherMainMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.EditCourseButton = new Guna.UI2.WinForms.Guna2Button();
+            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.enrollmentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Button1
@@ -91,7 +90,7 @@
             this.guna2Button1.FillColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(12, 229);
+            this.guna2Button1.Location = new System.Drawing.Point(12, 277);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 36;
@@ -126,21 +125,6 @@
             this.userProfileLink.Size = new System.Drawing.Size(180, 45);
             this.userProfileLink.TabIndex = 34;
             this.userProfileLink.Text = "Go to User Profile";
-            // 
-            // assesmentPageLink
-            // 
-            this.assesmentPageLink.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.assesmentPageLink.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.assesmentPageLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.assesmentPageLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.assesmentPageLink.FillColor = System.Drawing.SystemColors.ActiveCaption;
-            this.assesmentPageLink.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.assesmentPageLink.ForeColor = System.Drawing.Color.White;
-            this.assesmentPageLink.Location = new System.Drawing.Point(12, 290);
-            this.assesmentPageLink.Name = "assesmentPageLink";
-            this.assesmentPageLink.Size = new System.Drawing.Size(180, 45);
-            this.assesmentPageLink.TabIndex = 33;
-            this.assesmentPageLink.Text = "Go to Assesments";
             // 
             // deleteCourseButton
             // 
@@ -259,41 +243,6 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(197)))), ((int)(((byte)(247)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // userIDDataGridViewTextBoxColumn
-            // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
-            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // enrollmentDateDataGridViewTextBoxColumn
-            // 
-            this.enrollmentDateDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentDate";
-            this.enrollmentDateDataGridViewTextBoxColumn.HeaderText = "EnrollmentDate";
-            this.enrollmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.enrollmentDateDataGridViewTextBoxColumn.Name = "enrollmentDateDataGridViewTextBoxColumn";
-            // 
-            // courseTitleDataGridViewTextBoxColumn
-            // 
-            this.courseTitleDataGridViewTextBoxColumn.DataPropertyName = "CourseTitle";
-            this.courseTitleDataGridViewTextBoxColumn.HeaderText = "CourseTitle";
-            this.courseTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.courseTitleDataGridViewTextBoxColumn.Name = "courseTitleDataGridViewTextBoxColumn";
-            // 
             // EnrollmentID
             // 
             this.EnrollmentID.DataPropertyName = "EnrollmentID";
@@ -301,10 +250,6 @@
             this.EnrollmentID.MinimumWidth = 6;
             this.EnrollmentID.Name = "EnrollmentID";
             this.EnrollmentID.ReadOnly = true;
-            // 
-            // userDetailsBindingSource
-            // 
-            this.userDetailsBindingSource.DataSource = typeof(OnlineLearningManagementSystemApp.UserDetails);
             // 
             // online_learning_management_system_dbDataSet
             // 
@@ -591,6 +536,45 @@
             this.EditCourseButton.Text = "Edit Course";
             this.EditCourseButton.Click += new System.EventHandler(this.EditCourseButton_Click);
             // 
+            // userIDDataGridViewTextBoxColumn
+            // 
+            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
+            this.userIDDataGridViewTextBoxColumn.HeaderText = "UserID";
+            this.userIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // enrollmentDateDataGridViewTextBoxColumn
+            // 
+            this.enrollmentDateDataGridViewTextBoxColumn.DataPropertyName = "EnrollmentDate";
+            this.enrollmentDateDataGridViewTextBoxColumn.HeaderText = "EnrollmentDate";
+            this.enrollmentDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.enrollmentDateDataGridViewTextBoxColumn.Name = "enrollmentDateDataGridViewTextBoxColumn";
+            // 
+            // courseTitleDataGridViewTextBoxColumn
+            // 
+            this.courseTitleDataGridViewTextBoxColumn.DataPropertyName = "CourseTitle";
+            this.courseTitleDataGridViewTextBoxColumn.HeaderText = "CourseTitle";
+            this.courseTitleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseTitleDataGridViewTextBoxColumn.Name = "courseTitleDataGridViewTextBoxColumn";
+            // 
+            // userDetailsBindingSource
+            // 
+            this.userDetailsBindingSource.DataSource = typeof(OnlineLearningManagementSystemApp.UserDetails);
+            // 
             // TeacherMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,7 +591,6 @@
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.userProfileLink);
-            this.Controls.Add(this.assesmentPageLink);
             this.Controls.Add(this.deleteCourseButton);
             this.Controls.Add(this.deleteCourseTextBox);
             this.Controls.Add(this.guna2HtmlLabel3);
@@ -623,11 +606,11 @@
             this.Text = "TeacherMainPage";
             this.Load += new System.EventHandler(this.TeacherMainPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDetailsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,7 +621,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button logoutBtn;
         private Guna.UI2.WinForms.Guna2Button userProfileLink;
-        private Guna.UI2.WinForms.Guna2Button assesmentPageLink;
         private Guna.UI2.WinForms.Guna2Button deleteCourseButton;
         private Guna.UI2.WinForms.Guna2TextBox deleteCourseTextBox;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;

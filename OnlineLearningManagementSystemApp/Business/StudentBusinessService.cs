@@ -38,8 +38,6 @@ namespace OnlineLearningManagementSystemApp.Business
 
         public void EnrollCourse(long studentId, long courseId)
         {
-            try
-            {
                 // Check if the course with the given ID exists
                 Course course = courseRepository.GetById(courseId);
 
@@ -65,54 +63,24 @@ namespace OnlineLearningManagementSystemApp.Business
                     // Add the new enrollment
                     enrollmentRepository.Add(newEnrollment);
 
-                    // Show successful operation messagebox or perform other actions
-                    MessageBox.Show("Enrollment successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    // The specified course doesn't exist
-                    MessageBox.Show("Invalid course ID. Please enter a valid course ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (InvalidOperationException ex)
-            {
-                // Handle the specific exception for already enrolled students
-                MessageBox.Show($"Error: {ex.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            catch (Exception ex)
-            {
-                // Handle other exceptions
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    }
+               
+           
+           
         }
 
         public void UnenrollCourse(long studentId, long courseId)
         {
-            try
-            {
+           
                 // Check if the student is enrolled in the specified course
                 List<Enrollment> existingEnrollments = enrollmentRepository.GetByStudentId(studentId);
                 Enrollment enrollmentToRemove = existingEnrollments.FirstOrDefault(e => e.CourseID == courseId);
 
-                if (enrollmentToRemove != null)
-                {
-                    // Remove the enrollment
-                    enrollmentRepository.Delete(studentId,courseId);
-
-                    // Show successful operation messagebox or perform other actions
-                    MessageBox.Show("Unenrollment successful.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
-                }
-                else
-                {
-                    // The student is not enrolled in the specified course
-                    MessageBox.Show("Student is not enrolled in the specified course.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
+            if (enrollmentToRemove != null)
             {
-                // Handle other exceptions
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Remove the enrollment
+                enrollmentRepository.Delete(studentId, courseId);
+
             }
         }
 

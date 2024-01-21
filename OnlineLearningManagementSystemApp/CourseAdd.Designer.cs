@@ -51,8 +51,8 @@
             this.courseBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.CourseAddSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
             this.CourseAddTitleTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.CourseAddDescTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             this.courseAddMessageDialog = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.CourseAddDescTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             titleLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.online_learning_management_system_dbDataSet)).BeginInit();
@@ -130,7 +130,7 @@
             this.courseBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.courseBindingNavigator.Name = "courseBindingNavigator";
             this.courseBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.courseBindingNavigator.Size = new System.Drawing.Size(933, 27);
+            this.courseBindingNavigator.Size = new System.Drawing.Size(933, 31);
             this.courseBindingNavigator.TabIndex = 0;
             this.courseBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -140,7 +140,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
@@ -270,6 +270,15 @@
             this.CourseAddTitleTextBox.Size = new System.Drawing.Size(287, 53);
             this.CourseAddTitleTextBox.TabIndex = 54;
             // 
+            // courseAddMessageDialog
+            // 
+            this.courseAddMessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
+            this.courseAddMessageDialog.Caption = null;
+            this.courseAddMessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
+            this.courseAddMessageDialog.Parent = this;
+            this.courseAddMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.courseAddMessageDialog.Text = null;
+            // 
             // CourseAddDescTextBox
             // 
             this.CourseAddDescTextBox.BackColor = System.Drawing.Color.Transparent;
@@ -284,23 +293,14 @@
             this.CourseAddDescTextBox.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.CourseAddDescTextBox.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.CourseAddDescTextBox.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.CourseAddDescTextBox.Location = new System.Drawing.Point(345, 242);
+            this.CourseAddDescTextBox.Location = new System.Drawing.Point(345, 244);
             this.CourseAddDescTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CourseAddDescTextBox.Name = "CourseAddDescTextBox";
-            this.CourseAddDescTextBox.PasswordChar = '●';
+            this.CourseAddDescTextBox.PasswordChar = '\0';
             this.CourseAddDescTextBox.PlaceholderText = "Enter course description";
             this.CourseAddDescTextBox.SelectedText = "";
             this.CourseAddDescTextBox.Size = new System.Drawing.Size(287, 53);
-            this.CourseAddDescTextBox.TabIndex = 55;
-            // 
-            // courseAddMessageDialog
-            // 
-            this.courseAddMessageDialog.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OK;
-            this.courseAddMessageDialog.Caption = null;
-            this.courseAddMessageDialog.Icon = Guna.UI2.WinForms.MessageDialogIcon.None;
-            this.courseAddMessageDialog.Parent = this;
-            this.courseAddMessageDialog.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.courseAddMessageDialog.Text = null;
+            this.CourseAddDescTextBox.TabIndex = 65;
             // 
             // CourseAdd
             // 
@@ -347,7 +347,7 @@
         private System.Windows.Forms.ToolStripButton courseBindingNavigatorSaveItem;
         private Guna.UI2.WinForms.Guna2Button CourseAddSubmitBtn;
         private Guna.UI2.WinForms.Guna2TextBox CourseAddTitleTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox CourseAddDescTextBox;
         private Guna.UI2.WinForms.Guna2MessageDialog courseAddMessageDialog;
+        private Guna.UI2.WinForms.Guna2TextBox CourseAddDescTextBox;
     }
 }

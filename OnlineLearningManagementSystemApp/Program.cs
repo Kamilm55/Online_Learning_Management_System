@@ -16,10 +16,17 @@ namespace OnlineLearningManagementSystemApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            //  Application.Run(new StudentAssesmentPage());
-            //Application.Run(new UserProfile(6));
+            // Application.Run(new LoginForm());
+            //register
+            // Application.Run(new StudentMainPage(10007));
+            // Application.Run(new StudentAssesmentPage(10007));
+            //Application.Run(new UserProfile(10007));
+            //userCrud
+
             Application.Run(new TeacherMainPage(20007));
+            //course add
+            //course edit
+            //logout
         }
     }
 }

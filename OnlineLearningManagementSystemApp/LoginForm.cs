@@ -42,8 +42,7 @@ namespace OnlineLearningManagementSystemApp
             // Notify the presenter that login button is clicked
             LoginButtonClicked?.Invoke(this, EventArgs.Empty);
 
-            // Clear the textboxes after login
-            ClearTextboxes();
+            
         }
 
        
@@ -54,6 +53,9 @@ namespace OnlineLearningManagementSystemApp
             registerForm.Show();
         }
 
+        public void Close() {
+            this.Hide();
+        }
         /////////////////////
 
         // Show information dialog

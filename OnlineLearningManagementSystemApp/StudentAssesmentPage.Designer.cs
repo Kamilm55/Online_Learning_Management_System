@@ -41,9 +41,6 @@
             this.online_learning_management_system_dbDataSet = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSet();
             this.SearchlabelMain = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.StAssTExtBox = new Guna.UI2.WinForms.Guna2TextBox();
-            this.StAssSubmitBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.studentDataComboBox = new System.Windows.Forms.ComboBox();
             this.assessmentTableAdapter = new OnlineLearningManagementSystemApp.online_learning_management_system_dbDataSetTableAdapters.AssessmentTableAdapter();
@@ -183,51 +180,6 @@
             this.StAssTExtBox.TabIndex = 14;
             this.StAssTExtBox.TextChanged += new System.EventHandler(this.StAssTExtBox_TextChanged);
             // 
-            // StAssSubmitBtn
-            // 
-            this.StAssSubmitBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.StAssSubmitBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.StAssSubmitBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.StAssSubmitBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.StAssSubmitBtn.FillColor = System.Drawing.Color.Green;
-            this.StAssSubmitBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.StAssSubmitBtn.ForeColor = System.Drawing.Color.White;
-            this.StAssSubmitBtn.Location = new System.Drawing.Point(17, 308);
-            this.StAssSubmitBtn.Name = "StAssSubmitBtn";
-            this.StAssSubmitBtn.Size = new System.Drawing.Size(180, 45);
-            this.StAssSubmitBtn.TabIndex = 19;
-            this.StAssSubmitBtn.Text = "Submit";
-            this.StAssSubmitBtn.Click += new System.EventHandler(this.StAssSubmitBtn_Click);
-            // 
-            // guna2TextBox3
-            // 
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Location = new System.Drawing.Point(17, 253);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "Enter assesment id";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(229, 48);
-            this.guna2TextBox3.TabIndex = 18;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(17, 228);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(130, 18);
-            this.guna2HtmlLabel3.TabIndex = 17;
-            this.guna2HtmlLabel3.Text = "Complete assesment";
-            // 
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
@@ -262,9 +214,6 @@
             this.ClientSize = new System.Drawing.Size(943, 565);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.studentDataComboBox);
-            this.Controls.Add(this.StAssSubmitBtn);
-            this.Controls.Add(this.guna2TextBox3);
-            this.Controls.Add(this.guna2HtmlLabel3);
             this.Controls.Add(this.SearchlabelMain);
             this.Controls.Add(this.StAssTExtBox);
             this.Controls.Add(this.guna2DataGridView1);
@@ -284,9 +233,6 @@
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Guna.UI2.WinForms.Guna2HtmlLabel SearchlabelMain;
         private Guna.UI2.WinForms.Guna2TextBox StAssTExtBox;
-        private Guna.UI2.WinForms.Guna2Button StAssSubmitBtn;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private System.Windows.Forms.ComboBox studentDataComboBox;
         private online_learning_management_system_dbDataSet online_learning_management_system_dbDataSet;

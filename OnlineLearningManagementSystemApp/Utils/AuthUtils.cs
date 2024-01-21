@@ -15,7 +15,7 @@ namespace OnlineLearningManagementSystemApp.Utils
             return isValidEmail && isValidPassword;
         }
 
-        public bool ValidateCredentials(IRegisterView view, string username,  string email , string password)
+        public bool ValidateCredentials(IRegisterView view , string username,  string email , string password)
         {
             // Validate registration data
             bool isValidEmail = ValidateEmail(view, email);
@@ -27,7 +27,7 @@ namespace OnlineLearningManagementSystemApp.Utils
             return isValidUsername && isValidPassword && isValidEmail;
         }
 
-        private bool ValidateUsername(IRegisterView view, string username)
+        public bool ValidateUsername(IView view, string username)
         {
             // Validate username
             if (string.IsNullOrWhiteSpace(username))
@@ -42,7 +42,7 @@ namespace OnlineLearningManagementSystemApp.Utils
             return true;
         }
 
-        private bool ValidatePassword(IAuthView view, string password)
+        public bool ValidatePassword(IView view, string password)
         {
             // Validate password
             if (string.IsNullOrWhiteSpace(password) || password.Length < 6)
@@ -57,7 +57,7 @@ namespace OnlineLearningManagementSystemApp.Utils
             return true;
         }
 
-        private bool ValidateEmail(IAuthView view, string email)
+        public bool ValidateEmail(IView view, string email)
         {
             // Use a regular expression to validate the email format
             if (!IsValidEmail(email))

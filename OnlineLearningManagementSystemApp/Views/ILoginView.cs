@@ -10,6 +10,7 @@ namespace OnlineLearningManagementSystemApp.Views
     public interface ILoginView : IAuthView
     {
         void ShowMessage(string message);
+        void Close();
        // Guna2MessageDialog ShowConfirmation(string message, string caption = "Confirmation");
         //bool IsLoggedIn { get; set; }
     }

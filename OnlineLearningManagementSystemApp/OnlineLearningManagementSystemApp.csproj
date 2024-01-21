@@ -62,12 +62,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssesmentCRUD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AssesmentCRUD.Designer.cs">
-      <DependentUpon>AssesmentCRUD.cs</DependentUpon>
-    </Compile>
     <Compile Include="Assessment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -95,20 +89,14 @@
     <Compile Include="Enrollment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Assesment\AssesmentDetails.cs" />
     <Compile Include="Models\User\UserDetails.cs" />
-    <Compile Include="Presenters\StudentAssessmentPresenter.cs" />
     <Compile Include="Presenters\StudentPresenter.cs" />
     <Compile Include="StudentAssesmentPage.cs">
       <SubType>Form</SubType>
@@ -165,12 +153,6 @@
     <Compile Include="Roles\Admin.cs" />
     <Compile Include="Roles\Student.cs" />
     <Compile Include="Roles\Teacher.cs" />
-    <Compile Include="TeacherAssesment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TeacherAssesment.Designer.cs">
-      <DependentUpon>TeacherAssesment.cs</DependentUpon>
-    </Compile>
     <Compile Include="TeacherMainPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,17 +182,11 @@
     <Compile Include="Views\IStudentAssessmentView.cs" />
     <Compile Include="Views\IStudentView.cs" />
     <Compile Include="Views\IView.cs" />
-    <EmbeddedResource Include="AssesmentCRUD.resx">
-      <DependentUpon>AssesmentCRUD.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CourseAdd.resx">
       <DependentUpon>CourseAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CourseEdit.resx">
       <DependentUpon>CourseEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -232,9 +208,6 @@
     </Compile>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TeacherAssesment.resx">
-      <DependentUpon>TeacherAssesment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherMainPage.resx">
       <DependentUpon>TeacherMainPage.cs</DependentUpon>

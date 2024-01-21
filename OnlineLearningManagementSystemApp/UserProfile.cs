@@ -1,18 +1,12 @@
 ﻿using OnlineLearningManagementSystemApp.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OnlineLearningManagementSystemApp.Utils;
+using OnlineLearningManagementSystemApp.Views;
 using System.Windows.Forms;
+using System;
 
 namespace OnlineLearningManagementSystemApp
 {
-    public partial class UserProfile : Form
+    public partial class UserProfile : Form, IView
     {
         private readonly long userId;
         private readonly IUserRepository userRepository;
@@ -24,76 +18,72 @@ namespace OnlineLearningManagementSystemApp
             userRepository = new UserRepository();
         }
 
-     
-
         private void UserProfile_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'online_learning_management_system_dbDataSet.Users' table. You can move, or remove it, as needed.
+            LoadUserData();
+        }
+
+        private void LoadUserData()
+        {
             this.usersTableAdapter.Fill(this.online_learning_management_system_dbDataSet.Users);
 
-
-           User user = userRepository.GetById(this.userId);
+            User user = userRepository.GetById(userId);
 
             UserPrUsernameLabel.Text = user.Username;
             UserPrEmailLabel.Text = user.Email;
+            UserPrPasswordLabel.Text = GetEncryptedPassword(user.Password);
+        }
 
-            string pass = user.Password;
-            string encyrptedPass = "";
-
-            for (int i = 0; i < pass.Length; i++)
-            {
-                encyrptedPass += "*";
-            }
-            UserPrPasswordLabel .Text = encyrptedPass;
+        private string GetEncryptedPassword(string password)
+        {
+            return new string('*', password.Length);
         }
 
         private void UserPrEditBtn_Click(object sender, EventArgs e)
         {
-            // Check if the current form is visible
-            if (this.Visible)
+            OpenUserCrudForm();
+        }
+
+        private void OpenUserCrudForm()
+        {
+            this.Visible = false;
+
+            using (UserCrud userCrudForm = new UserCrud(userId))
             {
-                // Hide the current form before showing the dialog
-                this.Visible = false;
-
-                // Show the dialog
-                using (UserCrud userCrudForm = new UserCrud(userId))
-                {
-                    // Subscribe to the FormClosed event of the dialog
-                    userCrudForm.FormClosed += UserCrudForm_FormClosed;
-
-                    userCrudForm.ShowDialog();
-
-                    // Retrieve the edited user from the UserCrudForm after it's closed
-                    User editedUser = userCrudForm.EditedUser;
-                }
+                userCrudForm.FormClosed += UserCrudForm_FormClosed;
+                userCrudForm.ShowDialog();
             }
         }
 
         private void UserCrudForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // This method is called when the dialog is closed
-
-            // Retrieve the edited user from the UserCrudForm
             User editedUser = ((UserCrud)sender).EditedUser;
 
-            
+            UpdateUserProfile(editedUser);
 
-            //Debug.WriteLine(editedUser.Username + " " + user.Email);
-            UserPrUsernameLabel.Text = editedUser.Username;
-            UserPrEmailLabel.Text = editedUser.Email;
-
-            string pass = editedUser.Password;
-            string encyrptedPass = "";
-
-            for (int i = 0; i < pass.Length; i++)
-            {
-                encyrptedPass += "*";
-            }
-            UserPrPasswordLabel.Text = encyrptedPass;
-
-            // Show the current form again after the dialog is closed
             this.Visible = true;
         }
 
+        private void UpdateUserProfile(User editedUser)
+        {
+            UserPrUsernameLabel.Text = editedUser.Username;
+            UserPrEmailLabel.Text = editedUser.Email;
+            UserPrPasswordLabel.Text = GetEncryptedPassword(editedUser.Password);
+        }
+
+        public void ShowInformation(string message, string caption = "Information")
+        {
+            GunaMessageDialogUtils.PrepareShowInformation(UserMsgDialog, message, caption);
+        }
+
+        public void ShowWarning(string message, string caption = "Warning")
+        {
+            GunaMessageDialogUtils.PrepareShowWarning(UserMsgDialog, message, caption);
+        }
+
+        public void ShowError(string message, string caption = "Error")
+        {
+            GunaMessageDialogUtils.PrepareShowError(UserMsgDialog, message, caption);
+        }
     }
 }

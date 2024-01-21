@@ -3,30 +3,25 @@ using OnlineLearningManagementSystemApp.Utils;
 using OnlineLearningManagementSystemApp.Views;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OnlineLearningManagementSystemApp
 {
-    public partial class UserCrud : Form ,IView
+    public partial class UserCrud : Form, IView
     {
         private readonly long userId;
         private readonly IUserRepository userRepository;
         // Define a property to expose the User object
         public User EditedUser { get; private set; }
 
+        private readonly AuthUtils authUtils;
 
         public UserCrud(long userId)
         {
             InitializeComponent();
             this.userId = userId;
             userRepository = new UserRepository();
+            authUtils = new AuthUtils();
         }
 
         private void UserCrud_Load(object sender, EventArgs e)
@@ -35,61 +30,66 @@ namespace OnlineLearningManagementSystemApp
 
             userCrUsername.Text = user.Username;
             userCrEmail.Text = user.Email;
+
+            EditedUser = user;
         }
 
         private void UserCrSubmitBtn_Click(object sender, EventArgs e)
         {
-            //edit user by id
-            try
+            // Validate username
+            if (authUtils.ValidateUsername(this, userCrUsername.Text))
             {
-                userRepository.UpdateByUsername(userCrUsername.Text, userId);
-                ShowInformation("Successfully updated user details");
-                EditedUser = userRepository.GetById(this.userId);
+                // Edit user by username
+                try
+                {
+                    userRepository.UpdateByUsername(userCrUsername.Text, userId);
+                    ShowInformation("Successfully updated user details");
+                    EditedUser = userRepository.GetById(this.userId);
+                }
+                catch (Exception ex)
+                {
+                    ShowError(ex.Message);
+                }
             }
-            catch(Exception ex) 
-            {
-                ShowError(ex.Message);
-            }
-            
         }
 
         private void UserCrEmailSubmitBtn_Click(object sender, EventArgs e)
         {
-            try
+            // Validate email
+            if (authUtils.ValidateEmail(this, userCrEmail.Text))
             {
-                userRepository.UpdateByEmail(userCrEmail.Text, userId);
-                ShowInformation("Successfully updated user details");
-                EditedUser = userRepository.GetById(this.userId);
+                // Edit user by email
+                try
+                {
+                    userRepository.UpdateByEmail(userCrEmail.Text, userId);
+                    ShowInformation("Successfully updated user details");
+                    EditedUser = userRepository.GetById(this.userId);
+                }
+                catch (Exception ex)
+                {
+                    ShowError(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                ShowError(ex.Message);
-            }
-           
-           
         }
+
         private void UserCrPasswordSubmitBtn_Click(object sender, EventArgs e)
         {
-            try
+            // Validate password
+            if (authUtils.ValidatePassword(this, userCrPassword.Text))
             {
-                userRepository.UpdateByPassword(userCrPassword.Text, userId);
-                ShowInformation("Successfully updated user details");
-                EditedUser = userRepository.GetById(this.userId);
-
+                // Edit user by password
+                try
+                {
+                    userRepository.UpdateByPassword(userCrPassword.Text, userId);
+                    ShowInformation("Successfully updated user details");
+                    EditedUser = userRepository.GetById(this.userId);
+                }
+                catch (Exception ex)
+                {
+                    ShowError(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                ShowError(ex.Message);
-            }
-
         }
-
-       /* private void ClearTextBoxes()
-        {
-            userCrUsername.Text = "";
-            userCrEmail.Text = "";
-            userCrPassword.Text = "";
-        }*/
 
         public void ShowInformation(string message, string caption = "Information")
         {
