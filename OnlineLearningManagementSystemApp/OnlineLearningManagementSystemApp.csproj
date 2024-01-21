@@ -80,11 +80,17 @@
     <Compile Include="Course.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="CoursesCRUD.cs">
+    <Compile Include="CourseAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoursesCRUD.Designer.cs">
-      <DependentUpon>CoursesCRUD.cs</DependentUpon>
+    <Compile Include="CourseAdd.Designer.cs">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseEdit.Designer.cs">
+      <DependentUpon>CourseEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Enrollment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -197,8 +203,11 @@
     <EmbeddedResource Include="AssesmentCRUD.resx">
       <DependentUpon>AssesmentCRUD.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CoursesCRUD.resx">
-      <DependentUpon>CoursesCRUD.cs</DependentUpon>
+    <EmbeddedResource Include="CourseAdd.resx">
+      <DependentUpon>CourseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseEdit.resx">
+      <DependentUpon>CourseEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

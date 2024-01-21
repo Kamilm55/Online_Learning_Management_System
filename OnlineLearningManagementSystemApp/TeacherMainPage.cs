@@ -42,16 +42,9 @@ namespace OnlineLearningManagementSystemApp
             courseBindingSource.DataSource = courseRepository.GetCoursesByInstructorId(teacherId);
 
             List<UserDetails> userDetails = userRepository.GetStudentsWithDetailsByInstructorId(teacherId);
-           /* foreach (var item in userDetails)
-            {
-                Debug.WriteLine(item.Username);
-                Debug.WriteLine(item.CourseTitle);
-                Debug.WriteLine(item.EnrollmentID);
-
-            }*/
+          
             userDetailsBindingSource.DataSource = userDetails;
 
-            Debug.WriteLine(usersBindingSource.DataSource);
             // Load the EnrollmentID values as the default items in the ComboBox
             LoadEnrollmentIds(userDetails);
         }
@@ -162,30 +155,129 @@ namespace OnlineLearningManagementSystemApp
 
         private void MyCoursesSearchTextBox1_TextChanged(object sender, EventArgs e)
         {
+            string filterText = MyCoursesSearchTextBox1.Text.Trim().ToLower();
 
+            List<Course> courses = courseRepository.GetCoursesByInstructorId(teacherId);
+
+            if (string.IsNullOrWhiteSpace(filterText))
+            {
+                // If the filter text is empty, show all rows
+                courseBindingSource.DataSource = courses;
+            }
+            else
+            {
+                // Filter courses based on the entered text
+                var filteredCourses = courses.Where(course =>
+                    course.CourseID.ToString().Contains(filterText) ||
+                    course.Title.ToLower().Contains(filterText) ||
+                    course.Description.ToLower().Contains(filterText)
+                ).ToList();
+
+                // Update the binding source with the filtered courses
+                courseBindingSource.DataSource = filteredCourses;
+            }
         }
 
         private void AddCourseBtn_Click(object sender, EventArgs e)
         {
+            // Check if the current form is visible
+            if (this.Visible)
+            {
+                // Hide the current form before showing the dialog
+                this.Visible = false;
 
+                // Create an instance of the CourseAdd form and pass the repository and teacherId
+                using (CourseAdd courseAddForm = new CourseAdd(courseRepository, teacherId))
+                {
+                    // Subscribe to the FormClosed event of the dialog
+                    courseAddForm.FormClosed += CourseAddForm_FormClosed;
+
+                    // Show the form as a dialog
+                    DialogResult result = courseAddForm.ShowDialog();
+                }
+            }
         }
+
+        private void CourseAddForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Update the course data source in TeacherMainPage if needed
+            courseBindingSource.DataSource = courseRepository.GetCoursesByInstructorId(teacherId);
+
+            // Show the current form after the CourseAdd form is closed
+            this.Visible = true;
+        }
+
+
 
         private void EditCourseButton_Click(object sender, EventArgs e)
         {
+            // Check if the current form is visible
+            if (this.Visible)
+            {
+                // Hide the current form before showing the dialog
+                this.Visible = false;
 
+               
+                    // Create an instance of the CourseEdit form and pass the repository and course ID
+                    using (CourseEdit courseEditForm = new CourseEdit(courseRepository, teacherId))
+                    {
+                        // Subscribe to the FormClosed event of the dialog
+                        courseEditForm.FormClosed += CourseEditForm_FormClosed;
+
+                        // Show the form as a dialog
+                        DialogResult result = courseEditForm.ShowDialog();
+                    }
+               
+            }
         }
+
+        private void CourseEditForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Update the course data source in TeacherMainPage if needed
+            courseBindingSource.DataSource = courseRepository.GetCoursesByInstructorId(teacherId);
+
+            // Show the current form after the CourseEdit form is closed
+            this.Visible = true;
+        }
+
+        
+
 
         private void deleteCourseButton_Click(object sender, EventArgs e)
         {
-            long.TryParse(deleteCourseTextBox.Text, out long courseId);
+            if (long.TryParse(deleteCourseTextBox.Text, out long courseId))
+            {
+                try
+                {
+                    // Get all enrollments related to the course
+                    var enrollmentsToDelete = enrollmentRepository.GetByCourseId(courseId);
 
-            //
-            //butun enrolmentleri sil bununla elaqeli sonra delete ede bilersen 
-            courseRepository.Delete(courseId);
+                    // Delete all enrollments related to the course
+                    foreach (var enrollment in enrollmentsToDelete)
+                    {
+                        enrollmentRepository.Delete(enrollment.EnrollmentID);
+                    }
 
-            //update course
-            courseBindingSource.DataSource = courseRepository.GetByInstructorId(teacherId);
+                    // Now delete the course
+                    courseRepository.Delete(courseId);
+
+                    // Update course data source
+                    courseBindingSource.DataSource = courseRepository.GetCoursesByInstructorId(teacherId);
+                    ShowInformation($"Successfully deleted course with id {courseId}");
+                }
+                catch (Exception ex)
+                {
+                    // Handle the exception, you can use your custom error dialog method
+                    ShowError($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                // Use your custom ShowError method for invalid course ID
+                ShowError("Invalid course ID. Please enter a valid numeric course ID.");
+            }
         }
+
         //
 
         public void ShowInformation(string message, string caption = "Information")

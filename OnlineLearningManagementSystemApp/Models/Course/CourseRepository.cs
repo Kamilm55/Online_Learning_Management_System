@@ -117,5 +117,16 @@ namespace OnlineLearningManagementSystemApp.Models
 
             return courses;
         }
+
+        public List<long> GetCourseIdsByInstructorId(long instructorId)
+        {
+            // Assuming GetCoursesByInstructorId returns a list of Course objects
+            var courses = GetCoursesByInstructorId(instructorId);
+
+            // Extract course IDs from the list of Course objects
+            List<long> courseIds = courses.Select(course => course.CourseID).ToList();
+
+            return courseIds;
+        }
     }
 }

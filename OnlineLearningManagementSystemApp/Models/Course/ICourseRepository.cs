@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OnlineLearningManagementSystemApp.Models
 {
-    internal interface ICourseRepository
+    public interface ICourseRepository
     {
         Course GetById(long courseId);
         Course GetByTitle(string title);
@@ -19,5 +19,6 @@ namespace OnlineLearningManagementSystemApp.Models
         void UpdateInstructorId(long newInstructorId, long courseId);
         List<Course> GetEnrolledCoursesForUser(long userId);
         List<Course> GetCoursesByInstructorId(long instructorId);
+        List<long> GetCourseIdsByInstructorId(long instructorId);
     }
 }
