@@ -101,6 +101,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\User\UserDetails.cs" />
     <Compile Include="Presenters\StudentAssessmentPresenter.cs" />
     <Compile Include="Presenters\StudentPresenter.cs" />
     <Compile Include="StudentAssesmentPage.cs">
@@ -358,6 +359,8 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ModelDetails\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

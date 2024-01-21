@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OnlineLearningManagementSystemApp.ModelDetails;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -159,14 +160,40 @@ namespace OnlineLearningManagementSystemApp.Models
                       combined => combined.enrollment.CourseID,
                       course => course.CourseID,
                       (combined, course) => new { combined.user, combined.enrollment, course })
-                .Where(result => result.course.InstructorID == instructorId && result.user.Role == "Student")
+                .Where(result => result.course.InstructorID == instructorId)
                 .Select(result => result.user)
-                .Distinct()
+                //.Distinct()
                 .ToList();
 
             return students;
         }
 
+
+
+        public List<UserDetails> GetStudentsWithDetailsByInstructorId(long instructorId)
+        {
+            var students = dbEntities.Users
+                .Join(dbEntities.Enrollments,
+                      user => user.UserID,
+                      enrollment => enrollment.StudentID,
+                      (user, enrollment) => new { user, enrollment })
+                .Join(dbEntities.Courses,
+                      combined => combined.enrollment.CourseID,
+                      course => course.CourseID,
+                      (combined, course) => new { combined.user, combined.enrollment, course })
+                .Where(result => result.course.InstructorID == instructorId)
+                .Select(result => new UserDetails
+                {
+                    UserID = result.user.UserID,
+                    Username = result.user.Username,
+                    Email = result.user.Email,
+                    EnrollmentDate = result.enrollment.EnrollmentDate,
+                    CourseTitle = result.course.Title
+                })
+                .ToList();
+
+            return students;
+        }
 
     }
 }

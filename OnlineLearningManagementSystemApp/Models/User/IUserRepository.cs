@@ -1,10 +1,10 @@
-﻿    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    namespace OnlineLearningManagementSystemApp.Models
+namespace OnlineLearningManagementSystemApp.Models
     {
         public interface IUserRepository
         { 
@@ -21,5 +21,6 @@
             void UpdateByPassword(string newPassword, long userId);
             void UpdateByPhoto(string newPhoto, long userId);
             List<User> GetStudentsByInstructorId(long instructorId);
-        }
+           List<UserDetails> GetStudentsWithDetailsByInstructorId(long instructorId);
+    }
     }

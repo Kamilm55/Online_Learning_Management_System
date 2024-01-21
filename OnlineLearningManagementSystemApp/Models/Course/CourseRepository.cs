@@ -109,5 +109,13 @@ namespace OnlineLearningManagementSystemApp.Models
         }
 
 
+        public List<Course> GetCoursesByInstructorId(long instructorId)
+        {
+            var courses = dbEntities.Courses
+                                   .Where(course => course.InstructorID == instructorId)
+                                   .ToList();
+
+            return courses;
+        }
     }
 }
